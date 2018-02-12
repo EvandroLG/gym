@@ -48,10 +48,8 @@ DB.prototype = {
     var fn = callback || function() {};
 
     this._wait(function() {
-      var store = this.getObjectStore().get(id);
-
-      store.onsuccess = function(e) {
-        fn(store.result);
+      this.getObjectStore().get(id).onsuccess = function(e) {
+        fn(e.target.result);
       };
     });
   },
