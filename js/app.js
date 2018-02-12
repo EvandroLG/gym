@@ -18,7 +18,27 @@ document.addEventListener('DOMContentLoaded', function() {
     ]
   });
 
+  db.insert({
+    title: 'Back',
+    exercises: [
+      {
+        name: 'Wide-Grip Pull-Up',
+        repetitions: '8',
+        weight: null
+      },
+      {
+        name: 'Close-Grip Pull-Down',
+        repetitions: '10',
+        weight: '65kg'
+      }
+    ]
+  });
+
   db.find(1, function(obj) {
+    console.log(obj);
+  });
+
+  db.findAll(function(obj) {
     console.log(obj);
   });
 
