@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var db = new DB();
+  const db = new DB();
   db.createScheme();
 
   db.insert({
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ]
   });
 
-  db.find(1, function(obj) {
+  db.find(1, (obj) => {
     console.log(obj);
   });
 
-  db.findAll(function(obj) {
+  db.findAll((obj) => {
     console.log(obj);
   });
 
