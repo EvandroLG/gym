@@ -33,12 +33,14 @@ DB.prototype = {
     }.bind(this), 100);
   },
 
+  getObjectStore: function() {
+    return this.db.transaction(['Training'], 'readwrite')
+                  .objectStore('Training');
+  },
+
   insert: function(params) {
     this._wait(function() {
-      this.tx = this.db.transaction(['Training'], 'readwrite');
-      this.store = this.tx.objectStore('Training');
-
-      this.store.put(params);
+      this.getObjectStore().put(params);
     });
   },
 
@@ -46,12 +48,10 @@ DB.prototype = {
     var fn = callback || function() {};
 
     this._wait(function() {
-      this.tx = this.db.transaction(['Training'], 'readwrite');
-      this.store = this.tx.objectStore('Training');
-      var getStore = this.store.get(1);
+      var store = this.getObjectStore().get(1);
 
-      getStore.onsuccess = function(e) {
-        callback(getStore.result);
+      store.onsuccess = function(e) {
+        callback(store.result);
       };
     });
   }
