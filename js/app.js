@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   var db = new DB();
-  db.initialize();
+  db.createScheme();
 
-  db.create({
+  db.insert({
     title: 'Shoulders',
     exercises: [
       {
@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ]
   });
 
-  db.find(1);
+  db.find(1, function(obj) {
+    console.log(obj);
+  });
 
 }, false);

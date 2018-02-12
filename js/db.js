@@ -1,14 +1,12 @@
 var DB = function() {
-  this.request = window.indexedDB || window.mozIndexedDB ||
-                 window.webkitIndexedDB || window.msIndexedDB ||
-                 window.shimIndexedDB;
+  this.request = window.indexedDB;
 
   this.request.deleteDatabase('gym');
   this.open = this.request.open('gym', 1);
 };
 
 DB.prototype = {
-  initialize: function() {
+  createScheme: function() {
     this.open.onupgradeneeded = function(e) {
       var db = e.target.result;
       var store = db.createObjectStore('Training', { keyPath: 'id', autoIncrement:true });
@@ -16,41 +14,44 @@ DB.prototype = {
       store.createIndex('IndexTitle', 'title', { unique : true });
       store.createIndex('IndexExercises', 'exercises');
     }.bind(this);
+
+    this._onSuccess();
   },
 
-  _onSuccess: function(callback) {
+  _onSuccess: function() {
     this.open.onsuccess = function(e) {
-      var db = e.target.result;
-      var tx = db.transaction(['Training'], 'readwrite');
-      var store = tx.objectStore('Training');
-
-      callback(store);
-
-      //tx.oncomplete = function() {
-        //console.log('complete?');
-        //db.close();
-      //};
-
+      this.db = e.target.result;
     }.bind(this);
   },
 
-  create: function(params) {
-    this._onSuccess(function(store) {
-      store.put(params);
+  _wait: function(callback) {
+    var attempt = window.setInterval(function() {
+      if (this.db) {
+        callback.call(this);
+        window.clearInterval(attempt);
+      }
+    }.bind(this), 100);
+  },
 
-      var getStore = store.get(1);
-      //getStore.onsuccess = function(e) {
-        //console.log(getStore.result);
-      //};
+  insert: function(params) {
+    this._wait(function() {
+      this.tx = this.db.transaction(['Training'], 'readwrite');
+      this.store = this.tx.objectStore('Training');
+
+      this.store.put(params);
     });
   },
 
-  find: function(id) {
-    this._onSuccess(function(store) {
-      var getStore = store.get(1);
+  find: function(id, callback) {
+    var fn = callback || function() {};
+
+    this._wait(function() {
+      this.tx = this.db.transaction(['Training'], 'readwrite');
+      this.store = this.tx.objectStore('Training');
+      var getStore = this.store.get(1);
+
       getStore.onsuccess = function(e) {
-        debugger;
-        console.log(getStore.result);
+        callback(getStore.result);
       };
     });
   }
