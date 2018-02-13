@@ -1,3 +1,5 @@
+import DB from './db';
+
 document.addEventListener('DOMContentLoaded', function() {
   const db = new DB();
   db.createScheme();
