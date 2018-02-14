@@ -1,0 +1,15 @@
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+
+class Menu extends Component {
+  render() {
+    return (
+      <ul className="nav">
+        <li><NavLink to="/" className="nav-link">Current Training</NavLink></li>
+        <li><NavLink to="register" className="nav-link">Register new Training</NavLink></li>
+      </ul>
+    )
+  }
+};
+
+export default Menu;
