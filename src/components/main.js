@@ -11,8 +11,8 @@ class Main extends Component {
         <div>
           <Menu />
           <div className="content">
-            <Route path="/" component={Training} />
-            <Route path="register" component={Register} />
+            <Route exact path="/" component={Training} />
+            <Route path="/register" component={Register} />
           </div>
         </div>
       </HashRouter>
