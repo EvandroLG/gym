@@ -1,12 +1,14 @@
 class DB {
   constructor() {
     this.request = window.indexedDB;
-
-    this.request.deleteDatabase('gym');
     this.open = this.request.open('gym', 1);
   }
 
-  createScheme() {
+  deleteDatabase() {
+    this.request.deleteDatabase('gym');
+  }
+
+  createSchema() {
     this.open.onupgradeneeded = (e) => {
       let db = e.target.result;
       let store = db.createObjectStore('Training', { keyPath: 'id', autoIncrement:true });
