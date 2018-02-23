@@ -6,7 +6,7 @@ class Menu extends Component {
     return (
       <ul className="nav">
         <li><NavLink to="/" className="nav-link">Current Training</NavLink></li>
-        <li><NavLink to="register" className="nav-link">Register new Training</NavLink></li>
+        <li><NavLink to="register" className="nav-link">New Training</NavLink></li>
       </ul>
     )
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import Menu from './menu';
-import Training from './training';
+import TrainingList from './training_list';
 import Register from './register';
 
 class Main extends Component {
@@ -11,7 +11,7 @@ class Main extends Component {
         <div>
           <Menu />
           <div className="content">
-            <Route exact path="/" component={Training} />
+            <Route exact path="/" component={TrainingList} />
             <Route path="/register" component={Register} />
           </div>
         </div>
