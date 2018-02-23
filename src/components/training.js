@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 class Training extends Component {
   render() {
     return (
-      <h1>Current Training</h1>
+      <li>
+        { this.props.title }
+      </li>
     )
   }
-}
+};
 
-export default Training;
+export default Training
