@@ -6,6 +6,7 @@ class Register extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       titleField: null,
       exerciseComponents: [],
@@ -13,7 +14,7 @@ class Register extends Component {
     };
   }
 
-  onFormSubmit(e) {
+  _onFormSubmit(e) {
     e.preventDefault();
 
     const db = new DB();
@@ -25,17 +26,16 @@ class Register extends Component {
     });
   }
 
-  onInputChange(e) {
+  _onInputChange(e) {
     this.setState({
       titleField: e.target.value
     });
   }
 
-  removeExercise(i) {
-    let state = this.state.exerciseComponents;
-    state.splice(i, 1);
-
-    this.setState({ exerciseComponents: state });
+  _removeExercise(i) {
+    this.setState({
+      exerciseComponents: this.state.exerciseComponents.splice(i, 1)
+    });
   }
 
   _updateExerciseFields(fieldId, params) {
@@ -46,15 +46,13 @@ class Register extends Component {
     if (index >= 0) {
       fields[index][fieldId] = params;
     } else {
-      fields.push({
-        [fieldId]: params
-      });
+      fields.push({ [fieldId]: params });
     }
 
     return fields;
   }
 
-  onExerciseInputChange(fieldId, params) {
+  _onExerciseInputChange(fieldId, params) {
     const fields = this._updateExerciseFields(fieldId, params);
 
     this.setState({
@@ -62,18 +60,27 @@ class Register extends Component {
     });
   }
 
-  onButtonAddExercise() {
+  _onButtonAddExercise() {
     let exerciseComponents = this.state.exerciseComponents;
     const id = exerciseComponents.length;
     const props = {
       index: id,
-      onButtonRemoveExercise: this.removeExercise.bind(this),
-      onInputChange: this.onExerciseInputChange.bind(this)
+      onButtonRemoveExercise: this._removeExercise.bind(this),
+      onInputChange: this._onExerciseInputChange.bind(this)
     }
 
+    exerciseComponents.push(
+      <ExerciseFields key={ id } {...props} />
+    )
+
     this.setState({
-      exerciseComponents: exerciseComponents.concat(
-        <ExerciseFields key={ id } {...props} />)
+      exerciseComponents: exerciseComponents
+    });
+  }
+
+  _renderExerciseList() {
+    return this.state.exerciseComponents.map((fields) => {
+      return fields;
     });
   }
 
@@ -82,19 +89,15 @@ class Register extends Component {
       <div>
         <h1>Register a new training</h1>
 
-          <form onSubmit={this.onFormSubmit.bind(this)}>
+          <form onSubmit={this._onFormSubmit.bind(this)}>
             <div className="form-group">
               <label htmlFor="title" value={this.state.titleField}>Title</label>
-              <input className="form-control" id="title" onChange={this.onInputChange.bind(this)} />
+              <input className="form-control" id="title" onChange={this._onInputChange.bind(this)} />
             </div>
 
-            {
-              this.state.exerciseComponents.map((fields) => {
-                return fields;
-              })
-            }
+            { this._renderExerciseList() }
 
-            <button type="button" className="btn btn-success" onClick={this.onButtonAddExercise.bind(this)}>
+            <button type="button" className="btn btn-success" onClick={this._onButtonAddExercise.bind(this)}>
               Add Exercise
             </button>
             <input type="submit" className="btn btn-primary" value="Register it!" />
