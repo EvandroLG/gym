@@ -13,10 +13,10 @@ class TrainingList extends Component {
   }
 
   componentDidMount() {
-    this._getTrainings();
+    this._getTrainingList();
   }
 
-  _populateTrainings(params) {
+  _populateTrainingList(params) {
     let key = this.state.trainingList.length - 1;
 
     params.forEach((param) => {
@@ -29,11 +29,17 @@ class TrainingList extends Component {
     });
   }
 
-  _getTrainings() {
+  _getTrainingList() {
     const db = new DB();
 
     db.createSchema();
-    db.findAll(this._populateTrainings.bind(this));
+    db.findAll(this._populateTrainingList.bind(this));
+  }
+
+  _renderTrainingList() {
+    return this.state.trainingList.map((training) => {
+      return training;
+    });
   }
 
   render() {
@@ -42,11 +48,7 @@ class TrainingList extends Component {
         <h1>Current Training</h1>
 
         <ul>
-          {
-            this.state.trainingList.map((training) => {
-              return training; 
-            })
-          }
+          { this._renderTrainingList() }
         </ul>
       </div>
     )
