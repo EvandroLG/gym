@@ -30,10 +30,7 @@ class TrainingList extends Component {
   }
 
   _getTrainingList() {
-    const db = new DB();
-
-    db.createSchema();
-    db.findAll(this._populateTrainingList.bind(this));
+    new DB().findAll(this._populateTrainingList.bind(this));
   }
 
   _renderTrainingList() {

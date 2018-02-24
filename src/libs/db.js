@@ -2,6 +2,8 @@ class DB {
   constructor() {
     this.request = window.indexedDB;
     this.open = this.request.open('gym', 1);
+
+    this._onSuccess();
   }
 
   deleteDatabase() {
@@ -16,8 +18,6 @@ class DB {
       store.createIndex('IndexTitle', 'title', { unique : true });
       store.createIndex('IndexExercises', 'exercises');
     };
-
-    this._onSuccess();
   }
 
   _onSuccess() {

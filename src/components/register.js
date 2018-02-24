@@ -17,10 +17,7 @@ class Register extends Component {
   _onFormSubmit(e) {
     e.preventDefault();
 
-    const db = new DB();
-    db.createSchema();
-
-    db.insert({
+    new DB().insert({
       title: this.state.titleField,
       exercises: this.state.exerciseFields
     });
