@@ -21,7 +21,12 @@ class TrainingList extends Component {
 
     params.forEach((param) => {
       key = key + 1;
-      let training = <Training key={ key } title={ param.title } />;
+      let props = {
+        title: param.title,
+        exercises: param.exercises
+      };
+
+      let training = <Training key={ key } {...props} />;
 
       this.setState({
         trainingList: this.state.trainingList.concat(training)
@@ -44,7 +49,7 @@ class TrainingList extends Component {
       <div>
         <h1>Current Training</h1>
 
-        <ul>
+        <ul className="list-group">
           { this._renderTrainingList() }
         </ul>
       </div>
