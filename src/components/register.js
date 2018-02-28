@@ -40,8 +40,13 @@ class Register extends Component {
   }
 
   _removeExercise(i) {
+    const key = i + '';
+    const exerciseList = this.state.exerciseComponents.filter((exercise) => {
+      return exercise.key !== key;
+    });
+
     this.setState({
-      exerciseComponents: this.state.exerciseComponents.splice(i, 1)
+      exerciseComponents: exerciseList
     });
   }
 
