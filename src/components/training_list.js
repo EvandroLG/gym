@@ -7,6 +7,7 @@ class TrainingList extends Component {
   constructor(props) {
     super(props);
 
+    this.db = new DB();
     this.state = {
       trainingList: []
     };
@@ -16,7 +17,8 @@ class TrainingList extends Component {
     this._getTrainingList();
   }
 
-  _removeTraining(key) {
+  _removeTraining(i) {
+    const key = i + '';
     const trainingList = this.state.trainingList.filter((training) => {
       return training.key !== key;
     });
@@ -24,21 +26,22 @@ class TrainingList extends Component {
     this.setState({
       trainingList: trainingList
     });
+
+    this.db.remove(i);
   }
 
   _populateTrainingList(params) {
     let key = this.state.trainingList.length - 1;
 
     params.forEach((param) => {
-      key = key + 1;
       let props = {
-        index: key + '',
+        index: param.id,
         title: param.title,
         exercises: param.exercises,
         onButtonClick: this._removeTraining.bind(this)
       };
 
-      let training = <Training key={ key } {...props} />;
+      let training = <Training key={ param.id } {...props} />;
 
       this.setState({
         trainingList: this.state.trainingList.concat(training)
@@ -47,7 +50,7 @@ class TrainingList extends Component {
   }
 
   _getTrainingList() {
-    new DB().findAll(this._populateTrainingList.bind(this));
+    this.db.findAll(this._populateTrainingList.bind(this));
   }
 
   _renderTrainingList() {

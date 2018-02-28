@@ -61,6 +61,14 @@ class DB {
       };
     });
   }
+
+  remove(id, callback = function() {}) {
+    this._wait(() => {
+      this.getObjectStore().delete(id).onsuccess = (e) => {
+        callback(e.target.result);
+      };
+    });
+  }
 };
 
 export default DB;
