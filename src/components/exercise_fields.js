@@ -8,7 +8,8 @@ class ExerciseFields extends Component {
     this.state = {
       name: null,
       repetition: null,
-      weight: null
+      weight: null,
+      set: null
     };
   }
 
@@ -36,6 +37,11 @@ class ExerciseFields extends Component {
           <input type="text" className="form-control"
            ref={ (input) => this.nameInput = input } id={`exercise_name_${this.props.index}`}
            onChange={this.onInputChange.bind(this)} />
+        </div>
+        <div className="col">
+          <label htmlFor={`exercise_repetition_${this.props.id}`}>Set</label>
+          <input type="text" className="form-control" id={`exercise_set_${this.props.index}`}
+          onChange={this.onInputChange.bind(this)} />
         </div>
         <div className="col">
           <label htmlFor={`exercise_repetition_${this.props.id}`}>Repetition</label>
