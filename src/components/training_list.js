@@ -16,14 +16,26 @@ class TrainingList extends Component {
     this._getTrainingList();
   }
 
+  _removeTraining(key) {
+    const trainingList = this.state.trainingList.filter((training) => {
+      return training.key !== key;
+    });
+
+    this.setState({
+      trainingList: trainingList
+    });
+  }
+
   _populateTrainingList(params) {
     let key = this.state.trainingList.length - 1;
 
     params.forEach((param) => {
       key = key + 1;
       let props = {
+        index: key + '',
         title: param.title,
-        exercises: param.exercises
+        exercises: param.exercises,
+        onButtonClick: this._removeTraining.bind(this)
       };
 
       let training = <Training key={ key } {...props} />;
