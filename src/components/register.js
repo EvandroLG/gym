@@ -8,10 +8,18 @@ class Register extends Component {
     super(props);
 
     this.state = {
-      titleField: null,
+      titleField: '',
       exerciseComponents: [],
       exerciseFields: []
     };
+  }
+
+  _clearStates() {
+    this.setState({
+      titleField: '',
+      exerciseComponents: [],
+      exerciseFields: []
+    });
   }
 
   _onFormSubmit(e) {
@@ -21,6 +29,8 @@ class Register extends Component {
       title: this.state.titleField,
       exercises: this.state.exerciseFields
     });
+
+    this._clearStates();
   }
 
   _onInputChange(e) {
@@ -89,7 +99,7 @@ class Register extends Component {
           <form onSubmit={this._onFormSubmit.bind(this)}>
             <div className="form-group">
               <label htmlFor="title" value={this.state.titleField}>Title</label>
-              <input className="form-control" id="title" onChange={this._onInputChange.bind(this)} />
+              <input className="form-control" id="title" value={this.state.titleField} onChange={this._onInputChange.bind(this)} />
             </div>
 
             { this._renderExerciseList() }
