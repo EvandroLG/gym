@@ -19,9 +19,16 @@ class Training extends Component {
     return (
       <li className="list-group-item">
         <h4>{ this.props.title }</h4>
-        <button type="button" className="btn btn-danger" onClick={ () => this.props.onButtonClick(this.props.index) }>
-          Remove
-        </button>
+        <div className="btn-group float-right mb-1">
+          <button type="button" className="btn btn-primary btn-sm">
+            Edit
+          </button>
+
+          <button type="button" className="btn btn-danger btn-sm"
+           onClick={ () => this.props.onButtonClick(this.props.index) }>
+            Remove
+          </button>
+        </div>
 
         <table className="table table-hover">
           <thead className="thead-dark">

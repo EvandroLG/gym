@@ -105,14 +105,15 @@ class Register extends Component {
             <div className="form-group">
               <label htmlFor="title" value={this.state.titleField}>Title</label>
               <input className="form-control" id="title" value={this.state.titleField} onChange={this._onInputChange.bind(this)} />
+
+              { this._renderExerciseList() }
+
+              <button type="button" className="btn btn-primary btn-sm mt-1" onClick={this._onButtonAddExercise.bind(this)}>
+                Add Exercise
+              </button>
             </div>
 
-            { this._renderExerciseList() }
-
-            <button type="button" className="btn btn-success" onClick={this._onButtonAddExercise.bind(this)}>
-              Add Exercise
-            </button>
-            <input type="submit" className="btn btn-primary" value="Register it!" />
+            <input type="submit" className="btn btn-success btn-block mt-2" value="Register it!" />
           </form>
       </div>
     )
