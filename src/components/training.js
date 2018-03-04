@@ -54,9 +54,25 @@ class Training extends Component {
     });
   }
 
+  _renderInputTitle() {
+    return (
+      <input type="text" value={ this.props.title } />
+    )
+  }
+
+  _renderTitle() {
+    return (
+      <h4>{ this.props.title }</h4>
+    )
+  }
+
   _renderTable() {
+    const editing = this.state.editing;
+
     return (
       <form>
+        { this[editing ? '_renderInputTitle' : '_renderTitle']() }
+
         <table className="table table-hover">
           <thead className="thead-dark">
             <tr>
@@ -77,7 +93,6 @@ class Training extends Component {
   render() {
     return (
       <li className="list-group-item">
-        <h4>{ this.props.title }</h4>
         <div className="btn-group float-right mb-1">
           <button type="button" className="btn btn-primary btn-sm"
            onClick={ this._onEditButtonClick.bind(this) }>
