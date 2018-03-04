@@ -2,34 +2,61 @@ import React, { Component } from 'react';
 
 class Training extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      editing: false
+    };
+  }
+
+  renderExerciseTr(exercise, key) {
+    return (
+      <tr key={ key }>
+        <td>{ exercise[key].name }</td>
+        <td>{ exercise[key].set }</td>
+        <td>{ exercise[key].repetition }</td>
+        <td>{ exercise[key].weight }</td>
+      </tr>
+    )
+  }
+
+  renderExerciseForm(exercise, key) {
+    return (
+      <tr key={ key }>
+        <td>
+          <input type="text" value={ exercise[key].name } />
+        </td>
+        <td>
+          <input type="text" value={ exercise[key].set } />
+        </td>
+        <td>
+          <input type="text" value={ exercise[key].repetition } />
+        </td>
+        <td>
+          <input type="text" value={ exercise[key].weight } />
+        </td>
+      </tr>
+    )
+  }
+
   _renderExerciseList() {
+    const editing = this.state.editing;
+
     return this.props.exercises.map((exercise, key) => {
-      return (
-        <tr key={ key }>
-          <td>{ exercise[key].name }</td>
-          <td>{ exercise[key].set }</td>
-          <td>{ exercise[key].repetition }</td>
-          <td>{ exercise[key].weight }</td>
-        </tr>
-      )
+      return this[editing ? 'renderExerciseForm' : 'renderExerciseTr'](exercise, key);
     });
   }
 
-  render() {
+  _onEditButtonClick() {
+    this.setState({
+      editing: true
+    });
+  }
+
+  _renderTable() {
     return (
-      <li className="list-group-item">
-        <h4>{ this.props.title }</h4>
-        <div className="btn-group float-right mb-1">
-          <button type="button" className="btn btn-primary btn-sm">
-            Edit
-          </button>
-
-          <button type="button" className="btn btn-danger btn-sm"
-           onClick={ () => this.props.onButtonClick(this.props.index) }>
-            Remove
-          </button>
-        </div>
-
+      <form>
         <table className="table table-hover">
           <thead className="thead-dark">
             <tr>
@@ -43,6 +70,27 @@ class Training extends Component {
             { this._renderExerciseList() }
           </tbody>
         </table>
+      </form>
+    )
+  }
+
+  render() {
+    return (
+      <li className="list-group-item">
+        <h4>{ this.props.title }</h4>
+        <div className="btn-group float-right mb-1">
+          <button type="button" className="btn btn-primary btn-sm"
+           onClick={ this._onEditButtonClick.bind(this) }>
+            Edit
+          </button>
+
+          <button type="button" className="btn btn-danger btn-sm"
+           onClick={ () => this.props.onButtonClick(this.props.index) }>
+            Remove
+          </button>
+        </div>
+
+        { this._renderTable() }
       </li>
     )
   }
