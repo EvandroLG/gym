@@ -25,16 +25,16 @@ class Training extends Component {
     return (
       <tr key={ key }>
         <td>
-          <input type="text" value={ exercise[key].name } />
+          <input type="text" defaultValue={ exercise[key].name } />
         </td>
         <td>
-          <input type="text" value={ exercise[key].set } />
+          <input type="text" defaultValue={ exercise[key].set } />
         </td>
         <td>
-          <input type="text" value={ exercise[key].repetition } />
+          <input type="text" defaultValue={ exercise[key].repetition } />
         </td>
         <td>
-          <input type="text" value={ exercise[key].weight } />
+          <input type="text" defaultValue={ exercise[key].weight } />
         </td>
       </tr>
     )
@@ -56,7 +56,7 @@ class Training extends Component {
 
   _renderInputTitle() {
     return (
-      <input type="text" value={ this.props.title } />
+      <input type="text" defaultValue={ this.props.title } />
     )
   }
 
@@ -67,26 +67,34 @@ class Training extends Component {
   }
 
   _renderTable() {
-    const editing = this.state.editing;
+    return (
+      <table className="table table-hover">
+        <thead className="thead-dark">
+          <tr>
+            <th className="col">Exercise</th>
+            <th className="col">Set</th>
+            <th className="col">Repetition</th>
+            <th className="col">Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          { this._renderExerciseList() }
+        </tbody>
+      </table>
+    )
+  }
+
+  _onFormSubmit() {
+    this.setState({
+      editing: false
+    });
+  }
+
+  _renderSubmitButton() {
+    if (!this.state.editing) { return; }
 
     return (
-      <form>
-        { this[editing ? '_renderInputTitle' : '_renderTitle']() }
-
-        <table className="table table-hover">
-          <thead className="thead-dark">
-            <tr>
-              <th className="col">Exercise</th>
-              <th className="col">Set</th>
-              <th className="col">Repetition</th>
-              <th className="col">Weight</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this._renderExerciseList() }
-          </tbody>
-        </table>
-      </form>
+      <input type="submit" className="btn btn-success btn-sm float-right" value="Save!" />
     )
   }
 
@@ -105,7 +113,11 @@ class Training extends Component {
           </button>
         </div>
 
-        { this._renderTable() }
+        <form onSubmit={ this._onFormSubmit.bind(this) }>
+          { this[this.state.editing ? '_renderInputTitle' : '_renderTitle']() }
+          { this._renderTable() }
+          { this._renderSubmitButton() }
+        </form>
       </li>
     )
   }
