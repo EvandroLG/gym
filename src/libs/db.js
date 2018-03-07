@@ -62,6 +62,22 @@ class DB {
     });
   }
 
+  update(id, attributes, callback = function() {}) {
+    this._wait(() => {
+      this.getObjectStore().get(id).onsuccess = (e) => {
+        const data = e.target.result;
+
+        Object.keys(attributes).forEach((key) => {
+          data[key] = attributes[key];
+        });
+
+        this.getObjectStore().put(data).onsuccess = (e) => {
+          callback(e.target.result);
+        }
+      };
+    });
+  }
+
   remove(id, callback = function() {}) {
     this._wait(() => {
       this.getObjectStore().delete(id).onsuccess = (e) => {
