@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import DB from '../libs/db';
 
 class Training extends Component {
 
   constructor(props) {
     super(props);
 
+    this.db = new DB();
     this.state = {
-      editing: false
+      editing: false,
+      title: this.props.title,
+      exercises: this.props.exercises
     };
   }
 
-  renderExerciseTr(exercise, key) {
+  _renderExerciseTr(exercise, key) {
     return (
       <tr key={ key }>
         <td>{ exercise[key].name }</td>
@@ -21,7 +25,7 @@ class Training extends Component {
     )
   }
 
-  renderExerciseForm(exercise, key) {
+  _renderExerciseForm(exercise, key) {
     return (
       <tr key={ key }>
         <td>
@@ -43,8 +47,8 @@ class Training extends Component {
   _renderExerciseList() {
     const editing = this.state.editing;
 
-    return this.props.exercises.map((exercise, key) => {
-      return this[editing ? 'renderExerciseForm' : 'renderExerciseTr'](exercise, key);
+    return this.state.exercises.map((exercise, key) => {
+      return this[editing ? '_renderExerciseForm' : '_renderExerciseTr'](exercise, key);
     });
   }
 
@@ -54,15 +58,22 @@ class Training extends Component {
     });
   }
 
+  _onInputTitleChange(e) {
+    this.setState({
+      title: e.target.value
+    });
+  }
+
   _renderInputTitle() {
     return (
-      <input type="text" defaultValue={ this.props.title } />
+      <input type="text" onChange={ this._onInputTitleChange.bind(this) }
+        value={ this.state.title } />
     )
   }
 
   _renderTitle() {
     return (
-      <h4>{ this.props.title }</h4>
+      <h4>{ this.state.title }</h4>
     )
   }
 
@@ -84,9 +95,18 @@ class Training extends Component {
     )
   }
 
-  _onFormSubmit() {
-    this.setState({
-      editing: false
+  _onFormSubmit(e) {
+    e.preventDefault();
+
+    const props = {
+      title: this.state.title,
+      exercises: this.state.exercises
+    };
+
+    this.db.update(this.props.index, props, () => {
+      this.setState({
+        editing: false
+      });
     });
   }
 
