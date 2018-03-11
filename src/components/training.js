@@ -17,16 +17,16 @@ class Training extends Component {
   _renderExerciseTr(exercise, key) {
     return (
       <tr key={ key }>
-        <td>{ exercise[key].name }</td>
-        <td>{ exercise[key].set }</td>
-        <td>{ exercise[key].repetition }</td>
-        <td>{ exercise[key].weight }</td>
+        <td>{ exercise.name }</td>
+        <td>{ exercise.set }</td>
+        <td>{ exercise.repetition }</td>
+        <td>{ exercise.weight }</td>
       </tr>
     )
   }
 
   _onExerciseInputChange(e, key, property) {
-    this.state.exercises[key][key][property] = e.target.value;
+    this.state.exercises[key][property] = e.target.value;
 
     this.setState({
       exercises: this.state.exercises
@@ -38,19 +38,19 @@ class Training extends Component {
       <tr key={ key }>
         <td>
           <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'name') }
-           value={ exercise[key].name } />
+           value={ exercise.name } />
         </td>
         <td>
           <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'set') }
-            value={ exercise[key].set } />
+            value={ exercise.set } />
         </td>
         <td>
           <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'repetition') }
-            value={ exercise[key].repetition } />
+            value={ exercise.repetition } />
         </td>
         <td>
           <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'weight') }
-           value={ exercise[key].weight } />
+           value={ exercise.weight } />
         </td>
       </tr>
     )
@@ -94,12 +94,10 @@ class Training extends Component {
 
     this.setState({
       exercises: this.state.exercises.concat({
-        [key]: {
-          name: '',
-          set: '',
-          repetition: '',
-          weight: ''
-        }
+        name: '',
+        set: '',
+        repetition: '',
+        weight: ''
       })
     });
   }
@@ -141,8 +139,8 @@ class Training extends Component {
   _onFormSubmit(e) {
     e.preventDefault();
 
-    const exercises = this.state.exercises.filter((exercise, key) => {
-      return exercise[key].name;
+    const exercises = this.state.exercises.filter((exercise) => {
+      return exercise.name;
     });
 
     const props = {
