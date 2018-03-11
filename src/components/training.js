@@ -89,6 +89,36 @@ class Training extends Component {
     )
   }
 
+  _onButtonAddClick() {
+    const key = this.state.exercises.length + '';
+
+    this.setState({
+      exercises: this.state.exercises.concat({
+        [key]: {
+          name: '',
+          set: '',
+          repetition: '',
+          weight: ''
+        }
+      })
+    });
+  }
+
+  _renderAddButton() {
+    if (!this.state.editing) { return; }
+
+    return (
+      <tr>
+        <td colSpan="4">
+          <button type="button" onClick={ this._onButtonAddClick.bind(this) }
+           className="btn btn-sm btn-primary float-right">
+            Add
+          </button>
+        </td>
+      </tr>
+    )
+  }
+
   _renderTable() {
     return (
       <table className="table table-hover">
@@ -102,6 +132,7 @@ class Training extends Component {
         </thead>
         <tbody>
           { this._renderExerciseList() }
+          { this._renderAddButton() }
         </tbody>
       </table>
     )
@@ -110,10 +141,18 @@ class Training extends Component {
   _onFormSubmit(e) {
     e.preventDefault();
 
+    const exercises = this.state.exercises.filter((exercise, key) => {
+      return exercise[key].name;
+    });
+
     const props = {
       title: this.state.title,
-      exercises: this.state.exercises
+      exercises: exercises
     };
+
+    this.setState({
+      exercises: exercises
+    });
 
     this.db.update(this.props.index, props, () => {
       this.setState({
