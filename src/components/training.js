@@ -25,20 +25,32 @@ class Training extends Component {
     )
   }
 
+  _onExerciseInputChange(e, key, property) {
+    this.state.exercises[key][key][property] = e.target.value;
+
+    this.setState({
+      exercises: this.state.exercises
+    });
+  }
+
   _renderExerciseForm(exercise, key) {
     return (
       <tr key={ key }>
         <td>
-          <input type="text" defaultValue={ exercise[key].name } />
+          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'name') }
+           value={ exercise[key].name } />
         </td>
         <td>
-          <input type="text" defaultValue={ exercise[key].set } />
+          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'set') }
+            value={ exercise[key].set } />
         </td>
         <td>
-          <input type="text" defaultValue={ exercise[key].repetition } />
+          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'repetition') }
+            value={ exercise[key].repetition } />
         </td>
         <td>
-          <input type="text" defaultValue={ exercise[key].weight } />
+          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'weight') }
+           value={ exercise[key].weight } />
         </td>
       </tr>
     )
