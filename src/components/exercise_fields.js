@@ -6,10 +6,10 @@ class ExerciseFields extends Component {
     super(props);
 
     this.state = {
-      name: null,
-      repetition: null,
-      weight: null,
-      set: null
+      name: '',
+      repetition: '',
+      weight: '',
+      set: ''
     };
   }
 
@@ -18,14 +18,14 @@ class ExerciseFields extends Component {
   }
 
   onInputChange(e) {
-    const splitted = e.target.id;
-    const key = splitted.split('_')[1];
+    const id = e.target.id;
+    const key = id.split('_')[1];
 
     this.setState({
       [key]: e.target.value
     });
 
-    const fieldId = splitted.split('_')[2];
+    const fieldId = id.split('_')[2];
     this.props.onInputChange(fieldId, this.state);
   }
 
