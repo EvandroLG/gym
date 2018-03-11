@@ -27,7 +27,9 @@ class Register extends Component {
 
     new DB().insert({
       title: this.state.titleField,
-      exercises: this.state.exerciseFields
+      exercises: this.state.exerciseFields.map((element) => {
+        return element[Object.keys(element)[0]];
+      })
     });
 
     this._clearStates();
