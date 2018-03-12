@@ -1,4 +1,4 @@
-class DB {
+export default class DB {
   constructor() {
     this.request = window.indexedDB;
     this.open = this.request.open('gym', 1);
@@ -86,5 +86,3 @@ class DB {
     });
   }
 };
-
-export default DB;
