@@ -18,15 +18,13 @@ class ExerciseFields extends Component {
   }
 
   onInputChange(e) {
-    const id = e.target.id;
-    const key = id.split('_')[1];
+    const key = e.target.id.split('_')[1];
 
     this.setState({
       [key]: e.target.value
+    }, () => {
+      this.props.onInputChange(this.props.index + '', this.state)
     });
-
-    const fieldId = id.split('_')[2];
-    this.props.onInputChange(fieldId, this.state);
   }
 
   render() {
@@ -34,25 +32,37 @@ class ExerciseFields extends Component {
       <div className="row form-group mt-1 d-flex">
         <div className="col">
           <label htmlFor={`exercise_name_${this.props.index}`}>Name</label>
+
           <input type="text" className="form-control"
-           ref={ (input) => this.nameInput = input } id={`exercise_name_${this.props.index}`}
+           ref={ (input) => this.nameInput = input }
+           id={`exercise_name_${this.props.index}`}
            onChange={this.onInputChange.bind(this)} />
         </div>
+
         <div className="col">
           <label htmlFor={`exercise_set_${this.props.index}`}>Set</label>
-          <input type="text" className="form-control" id={`exercise_set_${this.props.index}`}
-          onChange={this.onInputChange.bind(this)} />
+
+          <input type="text" className="form-control"
+           id={`exercise_set_${this.props.index}`}
+           onChange={this.onInputChange.bind(this)} />
         </div>
+
         <div className="col">
           <label htmlFor={`exercise_repetition_${this.props.index}`}>Repetition</label>
-          <input type="text" className="form-control" id={`exercise_repetition_${this.props.index}`}
-          onChange={this.onInputChange.bind(this)} />
+
+          <input type="text" className="form-control"
+           id={`exercise_repetition_${this.props.index}`}
+           onChange={this.onInputChange.bind(this)} />
         </div>
+
         <div className="col">
           <label htmlFor={`exercise_weight_${this.props.index}`}>Weight</label>
-          <input type="text" className="form-control" id={`exercise_weight_${this.props.index}`}
-          onChange={this.onInputChange.bind(this)} />
+
+          <input type="text" className="form-control"
+           id={`exercise_weight_${this.props.index}`}
+           onChange={this.onInputChange.bind(this)} />
         </div>
+
         <div className="col align-self-center">
           <button type="button" className="btn btn-danger btn-sm"
            onClick={ () => this.props.onButtonRemoveExercise(this.props.index) }>
