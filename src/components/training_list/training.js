@@ -21,6 +21,7 @@ export default class Training extends Component {
         <td>{ exercise.set }</td>
         <td>{ exercise.repetition }</td>
         <td>{ exercise.weight }</td>
+        <td></td>
       </tr>
     )
   }
@@ -28,6 +29,13 @@ export default class Training extends Component {
   _onExerciseInputChange(e, key, property) {
     this.state.exercises[key][property] = e.target.value;
 
+    this.setState({
+      exercises: this.state.exercises
+    });
+  }
+
+  _onRemoveButtonClick(index) {
+    this.state.exercises.splice(index, 1);
     this.setState({
       exercises: this.state.exercises
     });
@@ -51,6 +59,12 @@ export default class Training extends Component {
         <td>
           <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'weight') }
            value={ exercise.weight } />
+        </td>
+        <td>
+          <button type="button" className="btn btn-danger btn-sm"
+           onClick={ () => this._onRemoveButtonClick(key).bind(this) }>
+            Remove
+          </button>
         </td>
       </tr>
     )
@@ -107,7 +121,7 @@ export default class Training extends Component {
 
     return (
       <tr>
-        <td colSpan="4">
+        <td colSpan="5">
           <button type="button" onClick={ this._onButtonAddClick.bind(this) }
            className="btn btn-sm btn-primary float-right">
             Add
@@ -126,6 +140,7 @@ export default class Training extends Component {
             <th className="col">Set</th>
             <th className="col">Repetition</th>
             <th className="col">Weight</th>
+            <th className="col"></th>
           </tr>
         </thead>
         <tbody>
