@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import Menu from './menu';
-import TrainingList from './training_list';
-import Register from './register';
+import TrainingList from './training_list/index';
+import NewTraining from './new_training/index';
 
-class Main extends Component {
+export default class Main extends Component {
   render() {
     return (
       <HashRouter>
@@ -12,12 +12,10 @@ class Main extends Component {
           <Menu />
           <div className="content">
             <Route exact path="/" component={TrainingList} />
-            <Route path="/register" component={Register} />
+            <Route path="/new_training" component={NewTraining} />
           </div>
         </div>
       </HashRouter>
     )
   }
 };
-
-export default Main;

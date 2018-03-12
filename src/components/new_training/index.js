@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import DB from '../libs/db';
+import DB from '../../libs/db';
 import ExerciseFields from './exercise_fields';
 
-class Register extends Component {
+export default class NewTraining extends Component {
 
   constructor(props) {
     super(props);
@@ -129,5 +129,3 @@ class Register extends Component {
     )
   }
 };
-
-export default Register;

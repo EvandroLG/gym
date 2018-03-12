@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Training from './training';
-import DB from '../libs/db';
+import DB from '../../libs/db';
 
-class TrainingList extends Component {
+export default class TrainingList extends Component {
 
   constructor(props) {
     super(props);
@@ -71,5 +71,3 @@ class TrainingList extends Component {
     )
   }
 };
-
-export default TrainingList;

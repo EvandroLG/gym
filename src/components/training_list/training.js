@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import DB from '../libs/db';
+import DB from '../../libs/db';
 
-class Training extends Component {
+export default class Training extends Component {
 
   constructor(props) {
     super(props);
@@ -191,5 +191,3 @@ class Training extends Component {
     )
   }
 };
-
-export default Training

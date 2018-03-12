@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Menu extends Component {
+export default class Menu extends Component {
   render() {
     return (
       <ul className="nav">
         <li className="nav-item">
-          <NavLink to="/" className="nav-link">Current Training</NavLink>
+          <NavLink to="/" className="nav-link">Training</NavLink>
         </li>
         <li>
-          <NavLink to="register" className="nav-link">New Training</NavLink>
+          <NavLink to="/new_training" className="nav-link">New Training</NavLink>
         </li>
       </ul>
     )
   }
 };
-
-export default Menu;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ExerciseFields extends Component {
+export default class ExerciseFields extends Component {
 
   constructor(props) {
     super(props);
@@ -73,5 +73,3 @@ class ExerciseFields extends Component {
     )
   }
 };
-
-export default ExerciseFields;
