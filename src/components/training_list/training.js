@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ExerciseField from './exercise_field';
 import DB from '../../libs/db';
 
 export default class Training extends Component {
@@ -44,25 +45,18 @@ export default class Training extends Component {
   _renderExerciseForm(exercise, key) {
     return (
       <tr key={ key }>
-        <td>
-          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'name') }
-           value={ exercise.name } />
-        </td>
-        <td>
-          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'set') }
-            value={ exercise.set } />
-        </td>
-        <td>
-          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'repetition') }
-            value={ exercise.repetition } />
-        </td>
-        <td>
-          <input type="text" onChange={ (e) => this._onExerciseInputChange(e, key, 'weight') }
-           value={ exercise.weight } />
-        </td>
+        <ExerciseField value={ exercise.name } index={ key } property='name'
+          onInputChange={ this._onExerciseInputChange } />
+        <ExerciseField value={ exercise.set } index={ key } property='set'
+          onInputChange={ this._onExerciseInputChange } />
+        <ExerciseField value={ exercise.repetition } index={ key } property='repetition'
+          onInputChange={ this._onExerciseInputChange } />
+        <ExerciseField value={ exercise.weight } index={ key } property='weight'
+          onInputChange={ this._onExerciseInputChange } />
+
         <td>
           <button type="button" className="btn btn-danger btn-sm"
-           onClick={ () => this._onRemoveButtonClick(key).bind(this) }>
+           onClick={ () => this._onRemoveButtonClick(key) }>
             Remove
           </button>
         </td>
