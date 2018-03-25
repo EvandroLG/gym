@@ -6,10 +6,10 @@ export default class Menu extends Component {
     return (
       <ul className="nav">
         <li className="nav-item">
-          <NavLink to="/" className="nav-link">Training</NavLink>
+          <NavLink exact to="/" activeClassName="disabled" className="nav-link">Training</NavLink>
         </li>
-        <li>
-          <NavLink to="/new_training" className="nav-link">New Training</NavLink>
+        <li className="nav-item">
+          <NavLink to="/new_training" activeClassName="disabled" className="nav-link">New Training</NavLink>
         </li>
       </ul>
     )
