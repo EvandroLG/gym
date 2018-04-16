@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`training list should render as expected 1`] = `
+<td>
+  <input
+    onChange={[Function]}
+    type="text"
+  />
+</td>
+`;

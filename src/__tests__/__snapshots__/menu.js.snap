@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`menu component should render as expected 1`] = `
+<ul
+  className="nav"
+>
+  <li
+    className="nav-item"
+  >
+    <NavLink
+      activeClassName="disabled"
+      ariaCurrent="true"
+      className="nav-link"
+      exact={true}
+      to="/"
+    >
+      Training
+    </NavLink>
+  </li>
+  <li
+    className="nav-item"
+  >
+    <NavLink
+      activeClassName="disabled"
+      ariaCurrent="true"
+      className="nav-link"
+      to="/new_training"
+    >
+      New Training
+    </NavLink>
+  </li>
+</ul>
+`;

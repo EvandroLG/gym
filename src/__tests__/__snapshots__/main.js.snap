@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main should render as expected 1`] = `
+<HashRouter>
+  <div>
+    <Menu />
+    <div
+      className="content"
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/new_training"
+      />
+    </div>
+  </div>
+</HashRouter>
+`;
