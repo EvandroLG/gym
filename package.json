@@ -26,6 +26,7 @@
   },
   "scripts": {
     "test": "./node_modules/jest/bin/jest.js",
+    "test:update": "./node_modules/jest/bin/jest.js -u",
     "build": "webpack",
     "start": "webpack-dev-server --open"
   },
