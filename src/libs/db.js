@@ -1,9 +1,24 @@
 export default class DB {
   constructor() {
+    this._initialize();
+  }
+
+  _initialize() {
     this.request = window.indexedDB;
     this.open = this.request.open('gym', 1);
 
-    this._onSuccess();
+    this.open.onsuccess = (e) => {
+      this.db = e.target.result;
+    };
+  }
+
+  _wait(callback) {
+    let attempt = window.setInterval(() => {
+      if (this.db) {
+        callback.call(this);
+        window.clearInterval(attempt);
+      }
+    }, 100);
   }
 
   deleteDatabase() {
@@ -18,21 +33,6 @@ export default class DB {
       store.createIndex('IndexTitle', 'title', { unique : true });
       store.createIndex('IndexExercises', 'exercises');
     };
-  }
-
-  _onSuccess() {
-    this.open.onsuccess = (e) => {
-      this.db = e.target.result;
-    };
-  }
-
-  _wait(callback) {
-    let attempt = window.setInterval(() => {
-      if (this.db) {
-        callback.call(this);
-        window.clearInterval(attempt);
-      }
-    }, 100);
   }
 
   getObjectStore() {
