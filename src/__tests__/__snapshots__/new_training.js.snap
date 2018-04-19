@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`new training exercise fields component should render as expected 1`] = `
+<div
+  className="row form-group mt-1 d-flex"
+>
+  <div
+    className="col"
+  >
+    <label
+      htmlFor="exercise_name_undefined"
+    >
+      Name
+    </label>
+    <input
+      className="form-control"
+      id="exercise_name_undefined"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="col"
+  >
+    <label
+      htmlFor="exercise_set_undefined"
+    >
+      Set
+    </label>
+    <input
+      className="form-control"
+      id="exercise_set_undefined"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="col"
+  >
+    <label
+      htmlFor="exercise_repetition_undefined"
+    >
+      Repetition
+    </label>
+    <input
+      className="form-control"
+      id="exercise_repetition_undefined"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="col"
+  >
+    <label
+      htmlFor="exercise_weight_undefined"
+    >
+      Weight
+    </label>
+    <input
+      className="form-control"
+      id="exercise_weight_undefined"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="col align-self-center"
+  >
+    <button
+      className="btn btn-danger btn-sm"
+      onClick={[Function]}
+      type="button"
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;
+
+exports[`new training new training component should render as expected 1`] = `
+<div>
+  <h1>
+    Register a new training
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="title"
+        value=""
+      >
+        Title
+      </label>
+      <input
+        className="form-control"
+        id="title"
+        onChange={[Function]}
+        value=""
+      />
+      <button
+        className="btn btn-primary btn-sm mt-1"
+        id="add"
+        onClick={[Function]}
+        type="button"
+      >
+        Add Exercise
+      </button>
+    </div>
+    <input
+      className="btn btn-success btn-block mt-2"
+      type="submit"
+      value="Register it!"
+    />
+  </form>
+</div>
+`;

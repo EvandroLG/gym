@@ -14,7 +14,9 @@ export default class ExerciseFields extends Component {
   }
 
   componentDidMount() {
-    this.nameInput.focus();
+    if (this.nameInput) {
+      this.nameInput.focus();
+    }
   }
 
   onInputChange(e) {

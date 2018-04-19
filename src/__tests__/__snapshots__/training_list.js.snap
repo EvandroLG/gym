@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`training list should render as expected 1`] = `
+exports[`training list execise field component should render as expected 1`] = `
 <td>
   <input
     onChange={[Function]}

@@ -116,6 +116,7 @@ export default class NewTraining extends Component {
 
               <button type="button"
                className="btn btn-primary btn-sm mt-1"
+               id="add"
                onClick={this._onButtonAddExercise.bind(this)}>
                 Add Exercise
               </button>
