@@ -79,42 +79,44 @@ exports[`new training exercise fields component should render as expected 1`] = 
 `;
 
 exports[`new training new training component should render as expected 1`] = `
-<div>
-  <h1>
-    Register a new training
-  </h1>
-  <form
-    onSubmit={[Function]}
-  >
-    <div
-      className="form-group"
+<NewTraining>
+  <div>
+    <h1>
+      Register a new training
+    </h1>
+    <form
+      onSubmit={[Function]}
     >
-      <label
-        htmlFor="title"
-        value=""
+      <div
+        className="form-group"
       >
-        Title
-      </label>
+        <label
+          htmlFor="title"
+          value=""
+        >
+          Title
+        </label>
+        <input
+          className="form-control"
+          id="title"
+          onChange={[Function]}
+          value=""
+        />
+        <button
+          className="btn btn-primary btn-sm mt-1"
+          id="add"
+          onClick={[Function]}
+          type="button"
+        >
+          Add Exercise
+        </button>
+      </div>
       <input
-        className="form-control"
-        id="title"
-        onChange={[Function]}
-        value=""
+        className="btn btn-success btn-block mt-2"
+        type="submit"
+        value="Register it!"
       />
-      <button
-        className="btn btn-primary btn-sm mt-1"
-        id="add"
-        onClick={[Function]}
-        type="button"
-      >
-        Add Exercise
-      </button>
-    </div>
-    <input
-      className="btn btn-success btn-block mt-2"
-      type="submit"
-      value="Register it!"
-    />
-  </form>
-</div>
+    </form>
+  </div>
+</NewTraining>
 `;
