@@ -22,11 +22,13 @@
     "webpack-dev-server": "^2.11.1"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/setup_test.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/setup_test.js",
+    "testPathIgnorePatterns": ["<rootDir>/src/__tests__/fixtures.js"]
   },
   "scripts": {
     "test": "./node_modules/jest/bin/jest.js",
     "test:update": "./node_modules/jest/bin/jest.js -u",
+    "test:coverage": "./node_modules/jest/bin/jest.js --coverage",
     "build": "webpack",
     "start": "webpack-dev-server --open"
   },
