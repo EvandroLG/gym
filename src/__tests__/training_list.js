@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import DB from '../libs/db';
 import ExerciseField from '../components/training_list/exercise_field';
 import Training from '../components/training_list/training';
+import TrainingList from '../components/training_list/index';
 import fixtures from './fixtures';
 
 describe('training list', () => {
@@ -18,12 +19,21 @@ describe('training list', () => {
 
       const props = {
         index: '1',
-        title: 'Back',
-        exercises: fixtures.legs,
+        title: fixtures[0].title,
+        exercises: fixtures[0].exercises,
         onButtonClick: () => {}
       };
 
       const component = shallow(<Training key={ props.index } { ...props } />);
+      verifySnapshot(component);
+    });
+
+    it('training list component should render as expected', () => {
+      DB.prototype.findAll = (callback) => {
+        callback(fixtures);
+      };
+
+      const component = shallow(<TrainingList />);
       verifySnapshot(component);
     });
   });
