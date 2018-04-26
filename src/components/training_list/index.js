@@ -31,8 +31,6 @@ export default class TrainingList extends Component {
   }
 
   _populateTrainingList(params) {
-    let key = this.state.trainingList.length - 1;
-
     params.forEach((param) => {
       let props = {
         index: param.id,
@@ -70,4 +68,4 @@ export default class TrainingList extends Component {
       </div>
     )
   }
-};
+}

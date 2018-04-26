@@ -28,7 +28,8 @@ export default class Training extends Component {
   }
 
   _onExerciseInputChange(e, key, property) {
-    this.state.exercises[key][property] = e.target.value;
+    let exercises = this.state.exercises;
+    exercises[key][property] = e.target.value;
 
     this.setState({
       exercises: this.state.exercises

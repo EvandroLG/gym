@@ -6,6 +6,8 @@ import Training from '../components/training_list/training';
 import TrainingList from '../components/training_list/index';
 import fixtures from './fixtures';
 
+/* global verifySnapshot */
+
 describe('training list', () => {
   describe('instances', () => {
     it('execise field component should render as expected', () => {

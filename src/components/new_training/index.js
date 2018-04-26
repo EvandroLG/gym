@@ -54,8 +54,7 @@ export default class NewTraining extends Component {
 
   _updateExerciseFields(fieldId, params) {
     let fields = this.state.exerciseFields;
-    const index = fields.map((x) => { return Object.keys(x)[0]; })
-                        .indexOf(fieldId);
+    const index = fields.map((x) => { return Object.keys(x)[0]; }).indexOf(fieldId);
 
     if (index >= 0) {
       fields[index][fieldId] = params;
@@ -103,30 +102,30 @@ export default class NewTraining extends Component {
       <div>
         <h1>Register a new training</h1>
 
-          <form onSubmit={this._onFormSubmit.bind(this)}>
-            <div className="form-group">
-              <label htmlFor="title" value={this.state.titleField}>Title</label>
+        <form onSubmit={this._onFormSubmit.bind(this)}>
+          <div className="form-group">
+            <label htmlFor="title" value={this.state.titleField}>Title</label>
 
-              <input className="form-control"
-               id="title"
-               value={this.state.titleField}
-               onChange={this._onInputChange.bind(this)} />
+            <input className="form-control"
+              id="title"
+              value={this.state.titleField}
+              onChange={this._onInputChange.bind(this)} />
 
-              { this._renderExerciseList() }
+            { this._renderExerciseList() }
 
-              <button type="button"
-               className="btn btn-primary btn-sm mt-1"
-               id="add"
-               onClick={this._onButtonAddExercise.bind(this)}>
-                Add Exercise
-              </button>
-            </div>
+            <button type="button"
+              className="btn btn-primary btn-sm mt-1"
+              id="add"
+              onClick={this._onButtonAddExercise.bind(this)}>
+              Add Exercise
+            </button>
+          </div>
 
-            <input type="submit"
-             className="btn btn-success btn-block mt-2"
-             value="Register it!" />
-          </form>
+          <input type="submit"
+            className="btn btn-success btn-block mt-2"
+            value="Register it!" />
+        </form>
       </div>
     )
   }
-};
+}

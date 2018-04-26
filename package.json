@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "babel-jest": "^22.4.3",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.4.3",
+    "enzyme-to-json": "^3.3.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
@@ -19,13 +16,22 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^2.11.1",
+    "babel-jest": "^22.4.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/setup_test.js",
-    "testPathIgnorePatterns": ["<rootDir>/src/__tests__/fixtures.js"]
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/__tests__/fixtures.js"
+    ]
   },
   "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js src/ --quiet",
     "test": "./node_modules/jest/bin/jest.js",
     "test:update": "./node_modules/jest/bin/jest.js -u",
     "test:coverage": "./node_modules/jest/bin/jest.js --coverage",

@@ -36,42 +36,42 @@ export default class ExerciseFields extends Component {
           <label htmlFor={`exercise_name_${this.props.index}`}>Name</label>
 
           <input type="text" className="form-control"
-           ref={ (input) => this.nameInput = input }
-           id={`exercise_name_${this.props.index}`}
-           onChange={this.onInputChange.bind(this)} />
+            ref={ (input) => this.nameInput = input }
+            id={`exercise_name_${this.props.index}`}
+            onChange={this.onInputChange.bind(this)} />
         </div>
 
         <div className="col">
           <label htmlFor={`exercise_set_${this.props.index}`}>Set</label>
 
           <input type="text" className="form-control"
-           id={`exercise_set_${this.props.index}`}
-           onChange={this.onInputChange.bind(this)} />
+            id={`exercise_set_${this.props.index}`}
+            onChange={this.onInputChange.bind(this)} />
         </div>
 
         <div className="col">
           <label htmlFor={`exercise_repetition_${this.props.index}`}>Repetition</label>
 
           <input type="text" className="form-control"
-           id={`exercise_repetition_${this.props.index}`}
-           onChange={this.onInputChange.bind(this)} />
+            id={`exercise_repetition_${this.props.index}`}
+            onChange={this.onInputChange.bind(this)} />
         </div>
 
         <div className="col">
           <label htmlFor={`exercise_weight_${this.props.index}`}>Weight</label>
 
           <input type="text" className="form-control"
-           id={`exercise_weight_${this.props.index}`}
-           onChange={this.onInputChange.bind(this)} />
+            id={`exercise_weight_${this.props.index}`}
+            onChange={this.onInputChange.bind(this)} />
         </div>
 
         <div className="col align-self-center">
           <button type="button" className="btn btn-danger btn-sm"
-           onClick={ () => this.props.onButtonRemoveExercise(this.props.index) }>
+            onClick={ () => this.props.onButtonRemoveExercise(this.props.index) }>
             Remove
           </button>
         </div>
       </div>
     )
   }
-};
+}

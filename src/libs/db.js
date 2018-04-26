@@ -37,7 +37,7 @@ export default class DB {
 
   getObjectStore() {
     return this.db.transaction(['Training'], 'readwrite')
-                  .objectStore('Training');
+      .objectStore('Training');
   }
 
   insert(params) {
@@ -85,4 +85,4 @@ export default class DB {
       };
     });
   }
-};
+}

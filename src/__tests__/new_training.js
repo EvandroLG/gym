@@ -4,6 +4,8 @@ import DB from '../libs/db';
 import NewTraining from '../components/new_training/index';
 import ExerciseFields from '../components/new_training/exercise_fields';
 
+/* global verifySnapshot */
+
 describe('new training', () => {
   const newTraining = mount(<NewTraining />);
   const exerciseFields = shallow(<ExerciseFields />);
