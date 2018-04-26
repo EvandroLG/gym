@@ -43,20 +43,22 @@ export default class Training extends Component {
   }
 
   _renderExerciseForm(exercise, key) {
+    const onExerciseInputChange = this._onExerciseInputChange.bind(this);
+
     return (
       <tr key={ key }>
         <ExerciseField value={ exercise.name } index={ key } property='name'
-          onInputChange={ this._onExerciseInputChange } />
+          onInputChange={ onExerciseInputChange } />
         <ExerciseField value={ exercise.set } index={ key } property='set'
-          onInputChange={ this._onExerciseInputChange } />
+          onInputChange={ onExerciseInputChange } />
         <ExerciseField value={ exercise.repetition } index={ key } property='repetition'
-          onInputChange={ this._onExerciseInputChange } />
+          onInputChange={ onExerciseInputChange } />
         <ExerciseField value={ exercise.weight } index={ key } property='weight'
-          onInputChange={ this._onExerciseInputChange } />
+          onInputChange={ onExerciseInputChange } />
 
         <td>
           <button type="button" className="btn btn-danger btn-sm"
-           onClick={ () => this._onRemoveButtonClick(key) }>
+            onClick={ () => this._onRemoveButtonClick(key) }>
             Remove
           </button>
         </td>
@@ -98,8 +100,6 @@ export default class Training extends Component {
   }
 
   _onButtonAddClick() {
-    const key = this.state.exercises.length + '';
-
     this.setState({
       exercises: this.state.exercises.concat({
         name: '',
@@ -117,7 +117,7 @@ export default class Training extends Component {
       <tr>
         <td colSpan="5">
           <button type="button" onClick={ this._onButtonAddClick.bind(this) }
-           className="btn btn-sm btn-primary float-right">
+            className="btn btn-sm btn-primary float-right">
             Add
           </button>
         </td>
@@ -181,12 +181,12 @@ export default class Training extends Component {
       <li className="list-group-item">
         <div className="btn-group float-right mb-1">
           <button type="button" className="btn btn-primary btn-sm"
-           onClick={ this._onEditButtonClick.bind(this) }>
+            onClick={ this._onEditButtonClick.bind(this) }>
             Edit
           </button>
 
           <button type="button" className="btn btn-danger btn-sm"
-           onClick={ () => this.props.onButtonClick(this.props.index) }>
+            onClick={ () => this.props.onButtonClick(this.props.index) }>
             Remove
           </button>
         </div>
@@ -199,4 +199,4 @@ export default class Training extends Component {
       </li>
     )
   }
-};
+}
