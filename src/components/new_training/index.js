@@ -43,13 +43,11 @@ export default class NewTraining extends Component {
 
   _removeExercise(i) {
     const key = i + '';
-    const exerciseList = this.state.exerciseComponents.filter((exercise) => {
+    const exerciseComponents = this.state.exerciseComponents.filter((exercise) => {
       return exercise.key !== key;
     });
 
-    this.setState({
-      exerciseComponents: exerciseList
-    });
+    this.setState({ exerciseComponents: exerciseComponents });
   }
 
   _updateExerciseFields(fieldId, params) {
@@ -66,11 +64,8 @@ export default class NewTraining extends Component {
   }
 
   _onExerciseInputChange(fieldId, params) {
-    const fields = this._updateExerciseFields(fieldId, params);
-
-    this.setState({
-      exerciseFields: fields
-    });
+    const exerciseFields = this._updateExerciseFields(fieldId, params);
+    this.setState({ exerciseFields });
   }
 
   _onButtonAddExercise() {
@@ -86,9 +81,7 @@ export default class NewTraining extends Component {
       <ExerciseFields key={ id } {...props} />
     )
 
-    this.setState({
-      exerciseComponents: exerciseComponents
-    });
+    this.setState({ exerciseComponents });
   }
 
   _renderExerciseList() {

@@ -23,9 +23,7 @@ export default class TrainingList extends Component {
       return training.key !== key;
     });
 
-    this.setState({
-      trainingList: trainingList
-    });
+    this.setState({ trainingList });
 
     this.db.remove(i);
   }

@@ -31,9 +31,7 @@ export default class Training extends Component {
     let exercises = this.state.exercises;
     exercises[key][property] = e.target.value;
 
-    this.setState({
-      exercises: this.state.exercises
-    });
+    this.setState({ exercises });
   }
 
   _onRemoveButtonClick(index) {
@@ -155,12 +153,10 @@ export default class Training extends Component {
 
     const props = {
       title: this.state.title,
-      exercises: exercises
+      exercises
     };
 
-    this.setState({
-      exercises: exercises
-    });
+    this.setState({ exercises });
 
     this.db.update(this.props.index, props, () => {
       this.setState({
