@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from 'react-modal';
 import ExerciseField from './exercise_field';
 import DB from '../../libs/db';
 
@@ -8,11 +9,54 @@ export default class Training extends Component {
     super(props);
 
     this.db = new DB();
+    this.modals = [];
     this.state = {
       editing: false,
       title: this.props.title,
-      exercises: this.props.exercises
+      exercises: this.props.exercises,
+      modals: {}
     };
+  }
+
+  componentDidMount() {
+    this.modals.forEach((key) => {
+      this._setModalState(key, false);
+    });
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
+  _setModalState(key, state) {
+    let modals = this.state.modals;
+    modals[key + ''] = state;
+
+    this.setState({ modals });
+  }
+
+  _renderButtonWatchVideo(key, url) {
+    if (url) {
+      this.modals.push(key);
+
+      return (
+        <td>
+          <button type="button" onClick={ () => this._setModalState(key, true) }>
+            Watch
+          </button>
+
+          <Modal isOpen={ this.state.modals[key + ''] }>
+            <button type="button" onClick={ () => this._setModalState(key, false) }>
+              Close
+            </button>
+
+            <iframe width="420" height="315" src={ url } frameBorder="0" allowFullScreen></iframe>
+          </Modal>
+        </td>
+      );
+    }
+
+    return <td>---</td>;
   }
 
   _renderExerciseTr(exercise, key) {
@@ -22,6 +66,7 @@ export default class Training extends Component {
         <td>{ exercise.set }</td>
         <td>{ exercise.repetition }</td>
         <td>{ exercise.weight }</td>
+        { this._renderButtonWatchVideo(key, exercise.youtube) }
         <td></td>
       </tr>
     )
@@ -53,6 +98,8 @@ export default class Training extends Component {
         <ExerciseField value={ exercise.repetition } index={ key } property='repetition'
           onInputChange={ onExerciseInputChange } />
         <ExerciseField value={ exercise.weight } index={ key } property='weight'
+          onInputChange={ onExerciseInputChange } />
+        <ExerciseField value={ exercise.youtube } index={ key } property='youtube'
           onInputChange={ onExerciseInputChange } />
 
         <td>
@@ -104,7 +151,8 @@ export default class Training extends Component {
         name: '',
         set: '',
         repetition: '',
-        weight: ''
+        weight: '',
+        youtube: ''
       })
     });
   }
@@ -133,6 +181,7 @@ export default class Training extends Component {
             <th className="col">Set</th>
             <th className="col">Repetition</th>
             <th className="col">Weight</th>
+            <th className="col">Video</th>
             <th className="col"></th>
           </tr>
         </thead>

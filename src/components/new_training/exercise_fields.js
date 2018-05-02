@@ -9,7 +9,8 @@ export default class ExerciseFields extends Component {
       name: '',
       repetition: '',
       weight: '',
-      set: ''
+      set: '',
+      youtube: ''
     };
   }
 
@@ -62,6 +63,14 @@ export default class ExerciseFields extends Component {
 
           <input type="text" className="form-control"
             id={`exercise_weight_${this.props.index}`}
+            onChange={this.onInputChange.bind(this)} />
+        </div>
+
+        <div className="col">
+          <label htmlFor={`exercise_youtube_${this.props.index}`}>Youtube</label>
+
+          <input type="text" className="form-control"
+            id={`exercise_youtube_${this.props.index}`}
             onChange={this.onInputChange.bind(this)} />
         </div>
 

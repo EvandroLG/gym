@@ -66,6 +66,11 @@ exports[`training list instances training component should render as expected 1`
           </th>
           <th
             className="col"
+          >
+            Video
+          </th>
+          <th
+            className="col"
           />
         </tr>
       </thead>
@@ -85,6 +90,9 @@ exports[`training list instances training component should render as expected 1`
           <td>
             10kg
           </td>
+          <td>
+            ---
+          </td>
           <td />
         </tr>
         <tr
@@ -101,6 +109,9 @@ exports[`training list instances training component should render as expected 1`
           </td>
           <td>
             35kg
+          </td>
+          <td>
+            ---
           </td>
           <td />
         </tr>

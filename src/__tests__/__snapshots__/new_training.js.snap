@@ -65,6 +65,21 @@ exports[`new training exercise fields component should render as expected 1`] = 
     />
   </div>
   <div
+    className="col"
+  >
+    <label
+      htmlFor="exercise_youtube_undefined"
+    >
+      Youtube
+    </label>
+    <input
+      className="form-control"
+      id="exercise_youtube_undefined"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
     className="col align-self-center"
   >
     <button
