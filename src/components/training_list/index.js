@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ShowVideo from './show_video';
 import Training from './training';
 import DB from '../../libs/db';
 
@@ -63,6 +64,8 @@ export default class TrainingList extends Component {
         <ul className="list-group">
           { this._renderTrainingList() }
         </ul>
+
+        <ShowVideo />
       </div>
     )
   }

@@ -129,7 +129,7 @@ exports[`training list instances training list component should render as expect
   <ul
     className="list-group"
   >
-    <Training
+    <Connect(Training)
       exercises={
         Array [
           Object {
@@ -151,7 +151,7 @@ exports[`training list instances training list component should render as expect
       onButtonClick={[Function]}
       title="Leg"
     />
-    <Training
+    <Connect(Training)
       exercises={
         Array [
           Object {
@@ -174,5 +174,6 @@ exports[`training list instances training list component should render as expect
       title="Chest"
     />
   </ul>
+  <Connect(ShowVideo) />
 </div>
 `;

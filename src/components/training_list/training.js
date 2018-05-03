@@ -1,57 +1,30 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
+import { connect } from 'react-redux';
+import { setVideoUrl } from '../../action_creators';
 import ExerciseField from './exercise_field';
 import DB from '../../libs/db';
 
-export default class Training extends Component {
+class Training extends Component {
 
   constructor(props) {
     super(props);
 
     this.db = new DB();
-    this.modals = [];
     this.state = {
       editing: false,
       title: this.props.title,
-      exercises: this.props.exercises,
-      modals: {}
+      exercises: this.props.exercises
     };
   }
 
-  componentDidMount() {
-    this.modals.forEach((key) => {
-      this._setModalState(key, false);
-    });
-  }
-
-  componentWillMount() {
-    Modal.setAppElement('body');
-  }
-
-  _setModalState(key, state) {
-    let modals = this.state.modals;
-    modals[key + ''] = state;
-
-    this.setState({ modals });
-  }
-
-  _renderButtonWatchVideo(key, url) {
+  _renderButtonWatchVideo(url) {
     if (url) {
-      this.modals.push(key);
-
       return (
         <td>
-          <button type="button" onClick={ () => this._setModalState(key, true) }>
+          <button type="button" onClick={ () => this.props.onVideoUrlChange(url) }>
             Watch
           </button>
 
-          <Modal isOpen={ this.state.modals[key + ''] }>
-            <button type="button" onClick={ () => this._setModalState(key, false) }>
-              Close
-            </button>
-
-            <iframe width="420" height="315" src={ url } frameBorder="0" allowFullScreen></iframe>
-          </Modal>
         </td>
       );
     }
@@ -66,7 +39,7 @@ export default class Training extends Component {
         <td>{ exercise.set }</td>
         <td>{ exercise.repetition }</td>
         <td>{ exercise.weight }</td>
-        { this._renderButtonWatchVideo(key, exercise.youtube) }
+        { this._renderButtonWatchVideo(exercise.youtube) }
         <td></td>
       </tr>
     )
@@ -246,3 +219,19 @@ export default class Training extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    videoUrl: state.videoUrl
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onVideoUrlChange: (url) => {
+      dispatch(setVideoUrl(url));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Training);
