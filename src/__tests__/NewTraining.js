@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import DB from '../libs/db';
-import NewTraining from '../components/new_training/index';
-import ExerciseFields from '../components/new_training/exercise_fields';
+import NewTraining from '../components/new_training/Index';
+import ExerciseFields from '../components/new_training/ExerciseFields';
 
 /* global verifySnapshot */
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import DB from '../libs/db';
-import ExerciseField from '../components/training_list/exercise_field';
-import Training from '../components/training_list/training';
-import TrainingList from '../components/training_list/index';
+import ExerciseField from '../components/training_list/ExerciseField';
+import Training from '../components/training_list/Training';
+import TrainingList from '../components/training_list/Index';
 import fixtures from './fixtures';
 
 /* global verifySnapshot */
