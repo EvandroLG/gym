@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ShowVideo from './show_video';
-import Training from './training';
+import ShowVideo from './ShowVideo';
+import Training from './Training';
 import DB from '../../libs/db';
 
 export default class TrainingList extends Component {

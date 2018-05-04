@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setVideoUrl } from '../../action_creators';
-import ExerciseField from './exercise_field';
+import ExerciseField from './ExerciseField';
 import DB from '../../libs/db';
 
 class Training extends Component {

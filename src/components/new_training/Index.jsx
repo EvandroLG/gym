@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DB from '../../libs/db';
-import ExerciseFields from './exercise_fields';
+import ExerciseFields from './ExerciseFields';
 
 export default class NewTraining extends Component {
 
