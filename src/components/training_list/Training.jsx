@@ -234,4 +234,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+export const Unwrapped = Training;
 export default connect(mapStateToProps, mapDispatchToProps)(Training);

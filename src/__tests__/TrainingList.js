@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import DB from '../libs/db';
 import ExerciseField from '../components/training_list/ExerciseField';
-import Training from '../components/training_list/Training';
+import Training, { Unwrapped as UnwrappedTraining } from '../components/training_list/Training';
 import TrainingList from '../components/training_list/Index';
 import fixtures from './fixtures';
 
@@ -26,7 +26,7 @@ describe('training list', () => {
         onButtonClick: () => {}
       };
 
-      const component = shallow(<Training key={ props.index } { ...props } />);
+      const component = shallow(<UnwrappedTraining key={ props.index } { ...props } />);
       verifySnapshot(component);
     });
 
