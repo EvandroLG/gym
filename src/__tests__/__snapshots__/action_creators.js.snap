@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`action creators should return an expected object 1`] = `
+Object {
+  "payload": "https://www.youtube.com/watch?v=04p4MWfhpAI",
+  "type": "SET_VIDEO_URL",
+}
+`;
