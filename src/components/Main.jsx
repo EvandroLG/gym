@@ -6,6 +6,8 @@ import Menu from './Menu';
 import TrainingList from './training_list/Index';
 import NewTraining from './new_training/Index';
 
+import './Main.css';
+
 export default class Main extends Component {
   render() {
     return (

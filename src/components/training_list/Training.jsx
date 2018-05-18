@@ -4,6 +4,8 @@ import { setVideoUrl } from '../../action_creators';
 import ExerciseField from './ExerciseField';
 import DB from '../../libs/db';
 
+import './Training.css';
+
 class Training extends Component {
 
   constructor(props) {
@@ -76,7 +78,7 @@ class Training extends Component {
           onInputChange={ onExerciseInputChange } />
 
         <td>
-          <button type="button" className="btn btn-danger btn-sm"
+          <button type="button" className="remove"
             onClick={ () => this._onRemoveButtonClick(key) }>
             Remove
           </button>
@@ -114,7 +116,7 @@ class Training extends Component {
 
   _renderTitle() {
     return (
-      <h4>{ this.state.title }</h4>
+      <h3>{ this.state.title }</h3>
     )
   }
 
@@ -135,9 +137,9 @@ class Training extends Component {
 
     return (
       <tr>
-        <td colSpan="5">
+        <td colSpan="6">
           <button type="button" onClick={ this._onButtonAddClick.bind(this) }
-            className="btn btn-sm btn-primary float-right">
+            className="add">
             Add
           </button>
         </td>
@@ -147,15 +149,15 @@ class Training extends Component {
 
   _renderTable() {
     return (
-      <table className="table table-hover">
-        <thead className="thead-dark">
+      <table>
+        <thead>
           <tr>
-            <th className="col">Exercise</th>
-            <th className="col">Set</th>
-            <th className="col">Repetition</th>
-            <th className="col">Weight</th>
-            <th className="col">Video</th>
-            <th className="col"></th>
+            <th>Exercise</th>
+            <th>Set</th>
+            <th>Repetition</th>
+            <th>Weight</th>
+            <th>Video</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -191,20 +193,22 @@ class Training extends Component {
     if (!this.state.editing) { return; }
 
     return (
-      <input type="submit" className="btn btn-success btn-sm float-right" value="Save!" />
+      <input type="submit" value="Save!" />
     )
   }
 
   render() {
     return (
-      <li className="list-group-item">
-        <div className="btn-group float-right mb-1">
-          <button type="button" className="btn btn-primary btn-sm"
+      <li>
+        <div className="btn-group">
+          <button type="button"
+            className="edit"
             onClick={ this._onEditButtonClick.bind(this) }>
             Edit
           </button>
 
-          <button type="button" className="btn btn-danger btn-sm"
+          <button type="button"
+            className="remove"
             onClick={ () => this.props.onButtonClick(this.props.index) }>
             Remove
           </button>

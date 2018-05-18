@@ -1,0 +1,25 @@
+.form-group label {
+  display: block;
+}
+
+.form-group > input[type='text'] {
+  width: 100%;
+}
+
+.form-group .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.form-group .row .col {
+  height: 40px;
+}
+
+.form-group .row .col:last-child {
+  line-height: 40px;
+}
+
+.form-group .add {
+  margin-top: 10px;
+}

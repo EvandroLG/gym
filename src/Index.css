@@ -1,0 +1,71 @@
+html, * {
+  box-sizing: border-box;
+}
+
+body, input {
+  font: caption;
+  font-size: 14px;
+  color: #222;
+}
+
+button, input[type="submit"] {
+  font-size: 12px;
+  background: #FFF;
+  border: 1px solid #3A3939;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+body input[type="submit"] {
+  font-size: 14px;
+  width: 25%;
+  border: 1px solid #03A9F4;
+  color: #03A9F4;
+  display: block;
+  margin: 0 auto;
+}
+
+body input[type="submit"]:hover {
+  background: #03A9F4;
+  color: #FFF;
+}
+
+button:hover, input[type="submit"]:hover {
+  color: #FFF;
+  background: #3A3939;
+}
+
+button.remove {
+  color: #FF0000;
+  border-color: #FF0000;
+}
+
+button.remove:hover {
+  background: #FF0000;
+  color: #FFF;
+}
+
+button.add {
+  color: #06CC06;
+  border-color: #06CC06;
+}
+
+button.add:hover {
+  background: #06CC06;
+  color: #FFF;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content h1 {
+  margin: 20px 0;
+  font-size: 30px;
+}

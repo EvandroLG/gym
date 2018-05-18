@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import './Menu.css';
+
 export default class Menu extends Component {
   render() {
     return (
       <ul className="nav">
-        <li className="nav-item">
-          <NavLink exact to="/" activeClassName="disabled" className="nav-link">Training</NavLink>
+        <li>
+          <NavLink exact to="/" activeClassName="disabled">Training</NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink to="/new_training" activeClassName="disabled" className="nav-link">New Training</NavLink>
+        <li>
+          <NavLink to="/new_training" activeClassName="disabled">New Training</NavLink>
         </li>
       </ul>
     )

@@ -1,0 +1,52 @@
+.list-group h3 {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.list-group table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.list-group tr {
+  border-collapse: separate;
+}
+
+.list-group thead {
+  background: #222;
+  color: #FFF;
+}
+
+.list-group td, .list-group th {
+  padding: 7px;
+}
+
+.list-group tbody tr:hover {
+  background: #F6F7F9; 
+}
+
+.list-group button.edit {
+  margin-right: 5px;
+}
+
+.list-group form {
+  margin-top: 20px;
+  position: relative;
+}
+
+.list-group form > input[type="text"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.list-group button.add, .list-group button.remove {
+  float: right;
+}
+
+.list-group li {
+  margin-bottom: 30px;
+}
+
+.list-group li:last-child {
+  margin-bottom: 0;
+}

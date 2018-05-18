@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import DB from '../../libs/db';
 import ExerciseFields from './ExerciseFields';
 
+import './Index.css';
+
 export default class NewTraining extends Component {
 
   constructor(props) {
@@ -99,23 +101,25 @@ export default class NewTraining extends Component {
           <div className="form-group">
             <label htmlFor="title" value={this.state.titleField}>Title</label>
 
-            <input className="form-control"
+            <input
+              type="text"
               id="title"
               value={this.state.titleField}
               onChange={this._onInputChange.bind(this)} />
 
             { this._renderExerciseList() }
 
-            <button type="button"
-              className="btn btn-primary btn-sm mt-1"
+            <button
+              type="button"
+              className="add"
               id="add"
               onClick={this._onButtonAddExercise.bind(this)}>
               Add Exercise
             </button>
           </div>
 
-          <input type="submit"
-            className="btn btn-success btn-block mt-2"
+          <input
+            type="submit"
             value="Register it!" />
         </form>
       </div>

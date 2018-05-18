@@ -32,11 +32,12 @@ export default class ExerciseFields extends Component {
 
   render() {
     return (
-      <div className="row form-group mt-1 d-flex">
+      <div className="row">
         <div className="col">
           <label htmlFor={`exercise_name_${this.props.index}`}>Name</label>
 
-          <input type="text" className="form-control"
+          <input
+            type="text"
             ref={ (input) => this.nameInput = input }
             id={`exercise_name_${this.props.index}`}
             onChange={this.onInputChange.bind(this)} />
@@ -45,7 +46,8 @@ export default class ExerciseFields extends Component {
         <div className="col">
           <label htmlFor={`exercise_set_${this.props.index}`}>Set</label>
 
-          <input type="text" className="form-control"
+          <input
+            type="text"
             id={`exercise_set_${this.props.index}`}
             onChange={this.onInputChange.bind(this)} />
         </div>
@@ -53,7 +55,8 @@ export default class ExerciseFields extends Component {
         <div className="col">
           <label htmlFor={`exercise_repetition_${this.props.index}`}>Repetition</label>
 
-          <input type="text" className="form-control"
+          <input
+            type="text"
             id={`exercise_repetition_${this.props.index}`}
             onChange={this.onInputChange.bind(this)} />
         </div>
@@ -61,7 +64,8 @@ export default class ExerciseFields extends Component {
         <div className="col">
           <label htmlFor={`exercise_weight_${this.props.index}`}>Weight</label>
 
-          <input type="text" className="form-control"
+          <input
+            type="text"
             id={`exercise_weight_${this.props.index}`}
             onChange={this.onInputChange.bind(this)} />
         </div>
@@ -69,13 +73,15 @@ export default class ExerciseFields extends Component {
         <div className="col">
           <label htmlFor={`exercise_youtube_${this.props.index}`}>Youtube</label>
 
-          <input type="text" className="form-control"
+          <input
+            type="text"
             id={`exercise_youtube_${this.props.index}`}
             onChange={this.onInputChange.bind(this)} />
         </div>
 
-        <div className="col align-self-center">
-          <button type="button" className="btn btn-danger btn-sm"
+        <div className="col">
+          <button
+            type="button" className="remove"
             onClick={ () => this.props.onButtonRemoveExercise(this.props.index) }>
             Remove
           </button>
