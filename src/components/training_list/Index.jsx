@@ -3,8 +3,6 @@ import ShowVideo from './ShowVideo';
 import Training from './Training';
 import DB from '../../libs/db';
 
-import './Index.css';
-
 export default class TrainingList extends Component {
 
   constructor(props) {

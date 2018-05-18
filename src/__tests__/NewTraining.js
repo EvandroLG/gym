@@ -58,10 +58,10 @@ describe('new training', () => {
     });
 
     it('should delete a box when delete button was clicked', () => {
-      newTraining.find('.btn-danger').first().simulate('click');
+      newTraining.find('button.remove').first().simulate('click');
       expect(newTraining.find(ExerciseFields)).toHaveLength(1);
 
-      newTraining.find('.btn-danger').first().simulate('click');
+      newTraining.find('button.remove').first().simulate('click');
       expect(newTraining.find(ExerciseFields)).toHaveLength(0);
     });
 

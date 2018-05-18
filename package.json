@@ -33,7 +33,10 @@
     "setupTestFrameworkScriptFile": "<rootDir>/setup_test.js",
     "testPathIgnorePatterns": [
       "<rootDir>/src/__tests__/fixtures.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/src/__mocks__/style_mock.js"
+    }
   },
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js src/ --quiet",

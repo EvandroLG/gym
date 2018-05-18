@@ -2,7 +2,7 @@
 
 exports[`new training exercise fields component should render as expected 1`] = `
 <div
-  className="row form-group mt-1 d-flex"
+  className="row"
 >
   <div
     className="col"
@@ -13,7 +13,6 @@ exports[`new training exercise fields component should render as expected 1`] = 
       Name
     </label>
     <input
-      className="form-control"
       id="exercise_name_undefined"
       onChange={[Function]}
       type="text"
@@ -28,7 +27,6 @@ exports[`new training exercise fields component should render as expected 1`] = 
       Set
     </label>
     <input
-      className="form-control"
       id="exercise_set_undefined"
       onChange={[Function]}
       type="text"
@@ -43,7 +41,6 @@ exports[`new training exercise fields component should render as expected 1`] = 
       Repetition
     </label>
     <input
-      className="form-control"
       id="exercise_repetition_undefined"
       onChange={[Function]}
       type="text"
@@ -58,7 +55,6 @@ exports[`new training exercise fields component should render as expected 1`] = 
       Weight
     </label>
     <input
-      className="form-control"
       id="exercise_weight_undefined"
       onChange={[Function]}
       type="text"
@@ -73,17 +69,16 @@ exports[`new training exercise fields component should render as expected 1`] = 
       Youtube
     </label>
     <input
-      className="form-control"
       id="exercise_youtube_undefined"
       onChange={[Function]}
       type="text"
     />
   </div>
   <div
-    className="col align-self-center"
+    className="col"
   >
     <button
-      className="btn btn-danger btn-sm"
+      className="remove"
       onClick={[Function]}
       type="button"
     >
@@ -112,13 +107,13 @@ exports[`new training new training component should render as expected 1`] = `
           Title
         </label>
         <input
-          className="form-control"
           id="title"
           onChange={[Function]}
+          type="text"
           value=""
         />
         <button
-          className="btn btn-primary btn-sm mt-1"
+          className="add"
           id="add"
           onClick={[Function]}
           type="button"
@@ -127,7 +122,6 @@ exports[`new training new training component should render as expected 1`] = `
         </button>
       </div>
       <input
-        className="btn btn-success btn-block mt-2"
         type="submit"
         value="Register it!"
       />
