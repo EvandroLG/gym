@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { setVideoUrl } from '../../action_creators';
 import Modal from 'react-modal';
 
+import './ShowVideo.css';
+
 class ShowVideo extends Component {
 
   constructor(props) {
@@ -20,16 +22,23 @@ class ShowVideo extends Component {
 
   render() {
     return (
-      <Modal isOpen={ !!this.props.videoUrl }>
-        <button type="button" onClick={ this._onCloseClick }>
+      <Modal
+        className="modal"
+        overlayClassName="overlay"
+        isOpen={ !!this.props.videoUrl }
+        onRequestClose={ this._onCloseClick }>
+        <button
+          type="button"
+          className="remove"
+          onClick={ this._onCloseClick }>
           Close
         </button>
 
         <iframe
-          width="420"
-          height="315"
           src={ this.props.videoUrl }
-          frameBorder="0" allowFullScreen></iframe>
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
       </Modal>
     )
   }
