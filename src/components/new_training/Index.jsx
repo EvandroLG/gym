@@ -10,7 +10,6 @@ export default class NewTraining extends Component {
     super(props);
 
     this.state = {
-      titleField: '',
       exerciseComponents: [],
       exerciseFields: []
     };
@@ -18,7 +17,6 @@ export default class NewTraining extends Component {
 
   _clearStates() {
     this.setState({
-      titleField: '',
       exerciseComponents: [],
       exerciseFields: []
     });
@@ -35,12 +33,6 @@ export default class NewTraining extends Component {
     });
 
     this._clearStates();
-  }
-
-  _onInputChange(e) {
-    this.setState({
-      titleField: e.target.value
-    });
   }
 
   _removeExercise(i) {
@@ -104,8 +96,9 @@ export default class NewTraining extends Component {
             <input
               type="text"
               id="title"
-              value={this.state.titleField}
-              onChange={this._onInputChange.bind(this)} />
+              value={this.props.title}
+              onChange={ (e) => this.props.onTitleUpdate(e.target.value) }
+            />
 
             { this._renderExerciseList() }
 
@@ -120,7 +113,8 @@ export default class NewTraining extends Component {
 
           <input
             type="submit"
-            value="Register it!" />
+            value="Register it!"
+          />
         </form>
       </div>
     )

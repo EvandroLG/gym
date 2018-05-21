@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setVideoUrl } from '../../action_creators';
 import Modal from 'react-modal';
 
 import './ShowVideo.css';
 
-class ShowVideo extends Component {
+export default class ShowVideo extends Component {
 
   constructor(props) {
     super(props);
@@ -27,6 +25,7 @@ class ShowVideo extends Component {
         overlayClassName="overlay"
         isOpen={ !!this.props.videoUrl }
         onRequestClose={ this._onCloseClick }>
+
         <button
           type="button"
           className="remove"
@@ -43,19 +42,3 @@ class ShowVideo extends Component {
     )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    videoUrl: state.videoUrl
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onVideoUrlChange: (url) => {
-      dispatch(setVideoUrl(url));
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShowVideo);

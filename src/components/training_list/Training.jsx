@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setVideoUrl } from '../../action_creators';
 import ExerciseField from './ExerciseField';
 import DB from '../../libs/db';
 
 import './Training.css';
 
-class Training extends Component {
+export default class Training extends Component {
 
   constructor(props) {
     super(props);
@@ -223,20 +221,3 @@ class Training extends Component {
     )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    videoUrl: state.videoUrl
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onVideoUrlChange: (url) => {
-      dispatch(setVideoUrl(url));
-    }
-  };
-};
-
-export const Unwrapped = Training;
-export default connect(mapStateToProps, mapDispatchToProps)(Training);
