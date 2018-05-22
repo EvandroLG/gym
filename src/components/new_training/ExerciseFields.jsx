@@ -4,14 +4,7 @@ export default class ExerciseFields extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      name: '',
-      repetition: '',
-      weight: '',
-      set: '',
-      youtube: ''
-    };
+    this._onInputChange = this._onInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -20,69 +13,64 @@ export default class ExerciseFields extends Component {
     }
   }
 
-  onInputChange(e) {
-    const key = e.target.id.split('_')[1];
-
-    this.setState({
-      [key]: e.target.value
-    }, () => {
-      this.props.onInputChange(this.props.index + '', this.state)
-    });
+  _onInputChange(e) {
+    const fieldName = e.target.id.split('_')[1];
+    this.props.onInputChange(this.props.id, fieldName, e.target.value);
   }
 
   render() {
     return (
       <div className="row">
         <div className="col">
-          <label htmlFor={`exercise_name_${this.props.index}`}>Name</label>
+          <label htmlFor={`exercise_name_${this.props.id}`}>Name</label>
 
           <input
             type="text"
             ref={ (input) => this.nameInput = input }
-            id={`exercise_name_${this.props.index}`}
-            onChange={this.onInputChange.bind(this)} />
+            id={`exercise_name_${this.props.id}`}
+            onChange={this._onInputChange} />
         </div>
 
         <div className="col">
-          <label htmlFor={`exercise_set_${this.props.index}`}>Set</label>
+          <label htmlFor={`exercise_set_${this.props.id}`}>Set</label>
 
           <input
             type="text"
-            id={`exercise_set_${this.props.index}`}
-            onChange={this.onInputChange.bind(this)} />
+            id={`exercise_set_${this.props.id}`}
+            onChange={this._onInputChange} />
         </div>
 
         <div className="col">
-          <label htmlFor={`exercise_repetition_${this.props.index}`}>Repetition</label>
+          <label htmlFor={`exercise_repetition_${this.props.id}`}>Repetition</label>
 
           <input
             type="text"
-            id={`exercise_repetition_${this.props.index}`}
-            onChange={this.onInputChange.bind(this)} />
+            id={`exercise_repetition_${this.props.id}`}
+            onChange={this._onInputChange} />
         </div>
 
         <div className="col">
-          <label htmlFor={`exercise_weight_${this.props.index}`}>Weight</label>
+          <label htmlFor={`exercise_weight_${this.props.id}`}>Weight</label>
 
           <input
             type="text"
-            id={`exercise_weight_${this.props.index}`}
-            onChange={this.onInputChange.bind(this)} />
+            id={`exercise_weight_${this.props.id}`}
+            onChange={this._onInputChange} />
         </div>
 
         <div className="col">
-          <label htmlFor={`exercise_youtube_${this.props.index}`}>Youtube</label>
+          <label htmlFor={`exercise_youtube_${this.props.id}`}>Youtube</label>
 
           <input
             type="text"
-            id={`exercise_youtube_${this.props.index}`}
-            onChange={this.onInputChange.bind(this)} />
+            id={`exercise_youtube_${this.props.id}`}
+            onChange={this._onInputChange} />
         </div>
 
         <div className="col">
           <button
             type="button" className="remove"
-            onClick={ () => this.props.onButtonRemoveExercise(this.props.index) }>
+            onClick={ () => this.props.onButtonRemoveExercise(this.props.id) }>
             Remove
           </button>
         </div>

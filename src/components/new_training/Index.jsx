@@ -35,52 +35,21 @@ export default class NewTraining extends Component {
     this._clearStates();
   }
 
-  _removeExercise(i) {
-    const key = i + '';
-    const exerciseComponents = this.state.exerciseComponents.filter((exercise) => {
-      return exercise.key !== key;
-    });
-
-    this.setState({ exerciseComponents: exerciseComponents });
-  }
-
-  _updateExerciseFields(fieldId, params) {
-    let fields = this.state.exerciseFields;
-    const index = fields.map((x) => { return Object.keys(x)[0]; }).indexOf(fieldId);
-
-    if (index >= 0) {
-      fields[index][fieldId] = params;
-    } else {
-      fields.push({ [fieldId]: params });
-    }
-
-    return fields;
-  }
-
   _onExerciseInputChange(fieldId, params) {
     const exerciseFields = this._updateExerciseFields(fieldId, params);
     this.setState({ exerciseFields });
   }
 
-  _onButtonAddExercise() {
-    let exerciseComponents = this.state.exerciseComponents;
-    const id = exerciseComponents.length;
-    const props = {
-      index: id,
-      onButtonRemoveExercise: this._removeExercise.bind(this),
-      onInputChange: this._onExerciseInputChange.bind(this)
-    }
-
-    exerciseComponents.push(
-      <ExerciseFields key={ id } {...props} />
-    )
-
-    this.setState({ exerciseComponents });
-  }
-
   _renderExerciseList() {
-    return this.state.exerciseComponents.map((fields) => {
-      return fields;
+    return this.props.exerciseList.map((exercise) => {
+      return (
+        <ExerciseFields
+          key = {exercise.id}
+          {...exercise}
+          onButtonRemoveExercise = { () => this.props.onRemoveExercise(exercise.id) }
+          onInputChange = { this.props.onUpdateExercise }
+        />
+      )
     });
   }
 
@@ -91,7 +60,7 @@ export default class NewTraining extends Component {
 
         <form onSubmit={this._onFormSubmit.bind(this)}>
           <div className="form-group">
-            <label htmlFor="title" value={this.state.titleField}>Title</label>
+            <label htmlFor="title">Title</label>
 
             <input
               type="text"
@@ -106,7 +75,7 @@ export default class NewTraining extends Component {
               type="button"
               className="add"
               id="add"
-              onClick={this._onButtonAddExercise.bind(this)}>
+              onClick={this.props.onAddExercise}>
               Add Exercise
             </button>
           </div>
