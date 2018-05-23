@@ -69,7 +69,8 @@ export default class ExerciseFields extends Component {
 
         <div className="col">
           <button
-            type="button" className="remove"
+            type="button"
+            className="remove"
             onClick={ () => this.props.onButtonRemoveExercise(this.props.id) }>
             Remove
           </button>

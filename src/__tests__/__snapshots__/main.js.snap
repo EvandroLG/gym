@@ -2,33 +2,23 @@
 
 exports[`main should render as expected 1`] = `
 <BrowserRouter>
-  <Provider
-    store={
-      Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      }
-    }
+  <div
+    className="container"
   >
-    <div>
-      <Menu />
-      <div
-        className="content"
-      >
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />
-        <Route
-          component={[Function]}
-          path="/new_training"
-        />
-      </div>
+    <Menu />
+    <div
+      className="content"
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/new_training"
+      />
     </div>
-  </Provider>
+  </div>
 </BrowserRouter>
 `;

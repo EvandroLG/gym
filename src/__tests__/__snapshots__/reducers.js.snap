@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducers should return an object with the same value passed as a parameter 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [],
+    "title": "",
+  },
+  "videoUrl": "https://www.youtube.com/watch?v=04p4MWfhpAI",
+}
+`;
