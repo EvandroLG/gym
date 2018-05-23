@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DB from '../../libs/db';
 import ExerciseFields from './ExerciseFields';
 
 import './Index.css';
@@ -8,31 +7,13 @@ export default class NewTraining extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      exerciseComponents: [],
-      exerciseFields: []
-    };
-  }
-
-  _clearStates() {
-    this.setState({
-      exerciseComponents: [],
-      exerciseFields: []
-    });
   }
 
   _onFormSubmit(e) {
     e.preventDefault();
 
-    new DB().insert({
-      title: this.state.titleField,
-      exercises: this.state.exerciseFields.map((element) => {
-        return element[Object.keys(element)[0]];
-      })
-    });
-
-    this._clearStates();
+    const { title, exerciseList } = this.props;
+    this.props.onSubmit(title, exerciseList);
   }
 
   _onExerciseInputChange(fieldId, params) {

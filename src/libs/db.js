@@ -40,9 +40,10 @@ export default class DB {
       .objectStore('Training');
   }
 
-  insert(params) {
+  insert(params, callback = function() {}) {
     this._wait(() => {
       this.getObjectStore().put(params);
+      callback();
     });
   }
 
