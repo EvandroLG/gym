@@ -9,13 +9,10 @@ export default class TrainingList extends Component {
     super(props);
 
     this.db = new DB();
-    this.state = {
-      trainingList: []
-    };
   }
 
   componentDidMount() {
-    this._getTrainingList();
+    this.props.findAll();
   }
 
   _removeTraining(i) {
@@ -29,30 +26,24 @@ export default class TrainingList extends Component {
     this.db.remove(i);
   }
 
-  _populateTrainingList(params) {
-    params.forEach((param) => {
-      let props = {
-        index: param.id,
-        title: param.title,
-        exercises: param.exercises,
-        onButtonClick: this._removeTraining.bind(this)
-      };
-
-      let training = <Training key={ param.id } {...props} />;
-
-      this.setState({
-        trainingList: this.state.trainingList.concat(training)
-      });
-    });
-  }
-
   _getTrainingList() {
     this.db.findAll(this._populateTrainingList.bind(this));
   }
 
   _renderTrainingList() {
-    return this.state.trainingList.map((training) => {
-      return training;
+    return this.props.trainingList.map(({ id, title, exerciseList }) => {
+      const props = {
+        id,
+        title,
+        exerciseList,
+        onChangeTitle: this.props.onChangeTitle,
+        onChangeExercise: this.props.onChangeExercise,
+        onRemoveExercise: this.props.onRemoveExercise,
+        onAddNewExercise: () => { this.props.onAddNewExercise(id) },
+        onSubmit: this.props.onSubmit
+      };
+
+      return <Training key={ id } { ...props } />;
     });
   }
 

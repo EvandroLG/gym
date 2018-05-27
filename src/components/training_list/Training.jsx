@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ExerciseField from './ExerciseField';
-import DB from '../../libs/db';
 
 import './Training.css';
 
@@ -9,12 +8,12 @@ export default class Training extends Component {
   constructor(props) {
     super(props);
 
-    this.db = new DB();
     this.state = {
       editing: false,
-      title: this.props.title,
-      exercises: this.props.exercises
     };
+
+    this._onChangeExercise = this._onChangeExercise.bind(this);
+    this._onFormSubmit = this._onFormSubmit.bind(this);
   }
 
   _renderButtonWatchVideo(url) {
@@ -24,7 +23,6 @@ export default class Training extends Component {
           <button type="button" onClick={ () => this.props.onVideoUrlChange(url) }>
             Watch
           </button>
-
         </td>
       );
     }
@@ -45,39 +43,52 @@ export default class Training extends Component {
     )
   }
 
-  _onExerciseInputChange(e, key, property) {
-    let exercises = this.state.exercises;
-    exercises[key][property] = e.target.value;
-
-    this.setState({ exercises });
+  _onChangeExercise(idExercise, property, value) {
+    const { id, onChangeExercise } = this.props;
+    onChangeExercise(id, idExercise, property, value);
   }
 
-  _onRemoveButtonClick(index) {
-    this.state.exercises.splice(index, 1);
-    this.setState({
-      exercises: this.state.exercises
-    });
-  }
-
-  _renderExerciseForm(exercise, key) {
-    const onExerciseInputChange = this._onExerciseInputChange.bind(this);
+  _renderExerciseForm(exercise) {
+    const { id } = exercise;
 
     return (
-      <tr key={ key }>
-        <ExerciseField value={ exercise.name } index={ key } property='name'
-          onInputChange={ onExerciseInputChange } />
-        <ExerciseField value={ exercise.set } index={ key } property='set'
-          onInputChange={ onExerciseInputChange } />
-        <ExerciseField value={ exercise.repetition } index={ key } property='repetition'
-          onInputChange={ onExerciseInputChange } />
-        <ExerciseField value={ exercise.weight } index={ key } property='weight'
-          onInputChange={ onExerciseInputChange } />
-        <ExerciseField value={ exercise.youtube } index={ key } property='youtube'
-          onInputChange={ onExerciseInputChange } />
+      <tr key={ id }>
+        <ExerciseField
+          id={id}
+          value={ exercise.name }
+          property='name'
+          onInputChange={ this._onChangeExercise }
+        />
+        <ExerciseField
+          id={id}
+          value={ exercise.set }
+          property='set'
+          onInputChange={ this._onChangeExercise }
+        />
+        <ExerciseField
+          id={id}
+          value={ exercise.repetition }
+          property='repetition'
+          onInputChange={ this._onChangeExercise }
+        />
+        <ExerciseField
+          id={id}
+          value={ exercise.weight }
+          property='weight'
+          onInputChange={ this._onChangeExercise }
+        />
+        <ExerciseField
+          id={id}
+          value={ exercise.youtube }
+          property='youtube'
+          onInputChange={ this._onChangeExercise }
+        />
 
         <td>
-          <button type="button" className="remove"
-            onClick={ () => this._onRemoveButtonClick(key) }>
+          <button
+            type="button"
+            className="remove"
+            onClick={ () => this.props.onRemoveExercise(this.props.id, exercise.id) }>
             Remove
           </button>
         </td>
@@ -88,7 +99,7 @@ export default class Training extends Component {
   _renderExerciseList() {
     const editing = this.state.editing;
 
-    return this.state.exercises.map((exercise, key) => {
+    return this.props.exerciseList.map((exercise, key) => {
       return this[editing ? '_renderExerciseForm' : '_renderExerciseTr'](exercise, key);
     });
   }
@@ -99,35 +110,20 @@ export default class Training extends Component {
     });
   }
 
-  _onInputTitleChange(e) {
-    this.setState({
-      title: e.target.value
-    });
-  }
-
   _renderInputTitle() {
     return (
-      <input type="text" onChange={ this._onInputTitleChange.bind(this) }
-        value={ this.state.title } />
+      <input
+        type="text"
+        onChange={ (e) => this.props.onChangeTitle(this.props.id, e.target.value) }
+        value={ this.props.title }
+      />
     )
   }
 
   _renderTitle() {
     return (
-      <h3>{ this.state.title }</h3>
+      <h3>{ this.props.title }</h3>
     )
-  }
-
-  _onButtonAddClick() {
-    this.setState({
-      exercises: this.state.exercises.concat({
-        name: '',
-        set: '',
-        repetition: '',
-        weight: '',
-        youtube: ''
-      })
-    });
   }
 
   _renderAddButton() {
@@ -136,7 +132,7 @@ export default class Training extends Component {
     return (
       <tr>
         <td colSpan="6">
-          <button type="button" onClick={ this._onButtonAddClick.bind(this) }
+          <button type="button" onClick={ this.props.onAddNewExercise }
             className="add">
             Add
           </button>
@@ -169,22 +165,17 @@ export default class Training extends Component {
   _onFormSubmit(e) {
     e.preventDefault();
 
-    const exercises = this.state.exercises.filter((exercise) => {
-      return exercise.name;
+    this.setState({
+      editing: false
     });
 
-    const props = {
-      title: this.state.title,
-      exercises
+    const { id, exerciseList, title } = this.props;
+    const training = {
+      title,
+      exerciseList
     };
 
-    this.setState({ exercises });
-
-    this.db.update(this.props.index, props, () => {
-      this.setState({
-        editing: false
-      });
-    });
+    this.props.onSubmit(id, training);
   }
 
   _renderSubmitButton() {
@@ -199,20 +190,22 @@ export default class Training extends Component {
     return (
       <li>
         <div className="btn-group">
-          <button type="button"
+          <button
+            type="button"
             className="edit"
             onClick={ this._onEditButtonClick.bind(this) }>
             Edit
           </button>
 
-          <button type="button"
+          <button
+            type="button"
             className="remove"
             onClick={ () => this.props.onButtonClick(this.props.index) }>
             Remove
           </button>
         </div>
 
-        <form onSubmit={ this._onFormSubmit.bind(this) }>
+        <form onSubmit={ this._onFormSubmit }>
           { this[this.state.editing ? '_renderInputTitle' : '_renderTitle']() }
           { this._renderTable() }
           { this._renderSubmitButton() }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Menu from './Menu';
-import TrainingList from './training_list/Index';
+import TrainingList from '../containers/TrainingList';
 import NewTraining from '../containers/NewTraining';
 
 import './Main.css';
