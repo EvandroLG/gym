@@ -1,29 +1,15 @@
 import React, { Component } from 'react';
 import ShowVideo from '../../containers/ShowVideo';
 import Training from '../../containers/Training';
-import DB from '../../libs/db';
 
 export default class TrainingList extends Component {
 
   constructor(props) {
     super(props);
-
-    this.db = new DB();
   }
 
   componentDidMount() {
     this.props.findAll();
-  }
-
-  _removeTraining(i) {
-    const key = i + '';
-    const trainingList = this.state.trainingList.filter((training) => {
-      return training.key !== key;
-    });
-
-    this.setState({ trainingList });
-
-    this.db.remove(i);
   }
 
   _getTrainingList() {
@@ -37,6 +23,7 @@ export default class TrainingList extends Component {
         title,
         exerciseList,
         onChangeTitle: this.props.onChangeTitle,
+        onRemoveTraining: this.props.onRemoveTraining,
         onChangeExercise: this.props.onChangeExercise,
         onRemoveExercise: this.props.onRemoveExercise,
         onAddNewExercise: () => { this.props.onAddNewExercise(id) },

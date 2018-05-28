@@ -19,6 +19,15 @@ const mapDispatchToProps = (dispatch) => {
       });
     },
 
+    onRemoveTraining: (id) => {
+      new DB().remove(id);
+
+      dispatch({
+        type: 'REMOVE_TRAINING',
+        id
+      });
+    },
+
     onAddNewExercise: (id) => {
       dispatch({
         type: 'ADD_NEW_EXERCISE',

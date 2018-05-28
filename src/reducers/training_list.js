@@ -5,6 +5,12 @@ const trainingList = (state = defaultState, action) => {
     return action.trainingList;
   }
 
+  if (action.type === 'REMOVE_TRAINING') {
+    return state.filter((training) => {
+      if (training.id !== action.id) { return training; }
+    });
+  }
+
   if (action.type === 'ADD_NEW_EXERCISE') {
     const defaultExercise = {
       name: '',

@@ -14,6 +14,7 @@ export default class Training extends Component {
 
     this._onChangeExercise = this._onChangeExercise.bind(this);
     this._onFormSubmit = this._onFormSubmit.bind(this);
+    this._onEditButtonClick = this._onEditButtonClick.bind(this);
   }
 
   _renderButtonWatchVideo(url) {
@@ -193,14 +194,14 @@ export default class Training extends Component {
           <button
             type="button"
             className="edit"
-            onClick={ this._onEditButtonClick.bind(this) }>
+            onClick={ this._onEditButtonClick }>
             Edit
           </button>
 
           <button
             type="button"
             className="remove"
-            onClick={ () => this.props.onButtonClick(this.props.index) }>
+            onClick={ () => this.props.onRemoveTraining(this.props.id) }>
             Remove
           </button>
         </div>
