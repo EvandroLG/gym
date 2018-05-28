@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`new training events should call correct callback after change input 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      1,
+      "name",
+      "Dumbbel Press",
+    ],
+  ],
+}
+`;
+
+exports[`new training events should call correct callback after change title 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "Chest",
+    ],
+  ],
+}
+`;
+
+exports[`new training events should call correct callback after click on remove button 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      1,
+    ],
+  ],
+}
+`;
+
 exports[`new training exercise fields component should render as expected 1`] = `
 <div
   className="row"
@@ -89,7 +121,10 @@ exports[`new training exercise fields component should render as expected 1`] = 
 `;
 
 exports[`new training new training component should render as expected 1`] = `
-<NewTraining>
+<NewTraining
+  exerciseList={Array []}
+  title=""
+>
   <div>
     <h1>
       Register a new training
@@ -102,7 +137,6 @@ exports[`new training new training component should render as expected 1`] = `
       >
         <label
           htmlFor="title"
-          value=""
         >
           Title
         </label>
@@ -115,7 +149,6 @@ exports[`new training new training component should render as expected 1`] = `
         <button
           className="add"
           id="add"
-          onClick={[Function]}
           type="button"
         >
           Add Exercise

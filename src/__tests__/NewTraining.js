@@ -7,124 +7,85 @@ import ExerciseFields from '../components/new_training/ExerciseFields';
 /* global verifySnapshot */
 
 describe('new training', () => {
-  const newTraining = mount(<NewTraining />);
-  const exerciseFields = shallow(<ExerciseFields />);
 
   it('new training component should render as expected', () => {
+    const props = { title: '', exerciseList: [] };
+    const newTraining = mount(<NewTraining { ...props } />);
+
     verifySnapshot(newTraining);
   });
 
   it('exercise fields component should render as expected', () => {
+    const exerciseFields = shallow(<ExerciseFields />);
     verifySnapshot(exerciseFields);
   });
 
   describe('events', () => {
-    function simulateChangeToExercise(field, v) {
-      newTraining.find('#exercise_name_0').simulate('change', {
-        target: {
-          id: `exercise_${field}_0`,
-          value: v
-        }
-      });
-    }
 
-    function addExercise() {
-      const name = 'Bench press';
-      simulateChangeToExercise('name', name);
-
-      const set = '3';
-      simulateChangeToExercise('set', set);
-
-      const repetition = '8';
-      simulateChangeToExercise('repetition', repetition);
-
-      const weight = '30kg';
-      simulateChangeToExercise('weight', weight);
-
-      return {
-        name,
-        set,
-        repetition,
-        weight
-      };
-    }
-
-    it('should create a box with correct form fields after click on add button', () => {
-      expect(newTraining.find(ExerciseFields)).toHaveLength(0);
-      newTraining.find('#add').simulate('click');
-      expect(newTraining.find(ExerciseFields)).toHaveLength(1);
-      newTraining.find('#add').simulate('click');
-      expect(newTraining.find(ExerciseFields)).toHaveLength(2);
-    });
-
-    it('should delete a box when delete button was clicked', () => {
-      newTraining.find('button.remove').first().simulate('click');
-      expect(newTraining.find(ExerciseFields)).toHaveLength(1);
-
-      newTraining.find('button.remove').first().simulate('click');
-      expect(newTraining.find(ExerciseFields)).toHaveLength(0);
-    });
-
-    it('should save title in state on change', () => {
-      const component = shallow(<NewTraining />);
-      const value = 'Chest';
-
-      component.find('#title').simulate('change', {
-        target: {
-          value: value
-        }
-      });
-
-      expect(component.state().titleField).toEqual(value);
-    });
-
-    it('should save exercises in state on change', () => {
-      expect(newTraining.state().exerciseComponents).toHaveLength(0);
-      expect(newTraining.state().exerciseFields).toHaveLength(0);
-
-      newTraining.find('#add').simulate('click');
-
-      const exercise = addExercise();
-      const stateFields = newTraining.state().exerciseFields[0]['0'];
-
-      expect(newTraining.state().exerciseComponents).toHaveLength(1);
-      expect(newTraining.state().exerciseFields).toHaveLength(1);
-      expect(stateFields.name).toEqual(exercise.name);
-      expect(stateFields.set).toEqual(exercise.set);
-      expect(stateFields.repetition).toEqual(exercise.repetition);
-      expect(stateFields.weight).toEqual(exercise.weight);
-
-      newTraining.instance()._clearStates();
-    });
-
-    it('should save exercises in indexddb on submit and clean the states', () => {
-      DB.prototype._initialize = () => {};
-      let params = null;
-      DB.prototype.insert = (_params) => {
-        params = _params;
+    function mountNewTraining(keyProp, mockCallback) {
+      const props = {
+        title: '',
+        exerciseList: [],
+        [keyProp]: mockCallback
       };
 
-      const title = 'Chest';
+      return mount(<NewTraining { ...props } />);
+    }
+
+    it('should call correct callback after click on add button', () => {
+      const mockCallback = jest.fn();
+      const newTraining = mountNewTraining('onAddExercise', mockCallback) 
+
+      newTraining.find('#add').simulate('click');
+      expect(mockCallback.mock.calls.length).toBe(1);
+    });
+
+    it('should call correct callback after change title', () => {
+      const mockCallback = jest.fn();
+      const newTraining = mountNewTraining('onTitleUpdate', mockCallback);
+
       newTraining.find('#title').simulate('change', {
         target: {
-          value: title
+          value: 'Chest'
         }
       });
 
-      newTraining.find('#add').simulate('click');
-      const exercise = addExercise();
-      newTraining.find('form').simulate('submit');
-      const exercises = params.exercises[0];
+      expect(mockCallback).toMatchSnapshot();
+    });
 
-      expect(params.title).toEqual(title);
-      expect(exercises.name).toEqual(exercise.name);
-      expect(exercises.repetition).toEqual(exercise.repetition);
-      expect(exercises.weight).toEqual(exercise.weight);
+    function mountExercise(keyProp, mockCallback) {
+      const props = {
+        id: 1,
+        title: '',
+        exerciseList: [],
+        [keyProp]: mockCallback
+      };
 
-      const state = newTraining.state();
-      expect(state.titleField).toEqual('');
-      expect(state.exerciseComponents).toHaveLength(0);
-      expect(state.exerciseFields).toHaveLength(0);
+      return shallow(<ExerciseFields { ...props } />);
+    }
+
+    it('should call correct callback after change input', () => {
+      const mockCallback = jest.fn();
+      const exercise = mountExercise('onInputChange', mockCallback);
+      const id = 'exercise_name_1';
+
+      exercise.find(`#${id}`).simulate('change', {
+        target: {
+          id,
+          value: 'Dumbbel Press'
+        }
+      });
+
+      expect(mockCallback).toMatchSnapshot();
+    });
+
+    it('should call correct callback after click on remove button', () => {
+      const mockCallback = jest.fn();
+      const exercise = mountExercise('onButtonRemoveExercise', mockCallback);
+
+      exercise.find('.remove').simulate('click');
+
+      expect(mockCallback).toMatchSnapshot();
     });
   });
 });
