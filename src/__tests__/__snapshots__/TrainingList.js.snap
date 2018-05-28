@@ -1,161 +1,2057 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`training list instances execise field component should render as expected 1`] = `
-<td>
-  <input
-    onChange={[Function]}
-    type="text"
-  />
-</td>
+exports[`training list training component should return html structure as expected 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Training
+    exerciseList={
+      Array [
+        Object {
+          "name": "Barbell Deadlift",
+          "repetition": "8",
+          "set": "3",
+          "weight": "10kg",
+        },
+        Object {
+          "name": "Wide-Grip Pull-Up",
+          "repetition": "8",
+          "set": "3",
+          "weight": "35kg",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="btn-group"
+        >
+          <button
+            className="edit"
+            onClick={[Function]}
+            type="button"
+          >
+            Edit
+          </button>
+          <button
+            className="remove"
+            onClick={[Function]}
+            type="button"
+          >
+            Remove
+          </button>
+        </div>,
+        <form
+          onSubmit={[Function]}
+        >
+          <h3 />
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Exercise
+                </th>
+                <th>
+                  Set
+                </th>
+                <th>
+                  Repetition
+                </th>
+                <th>
+                  Weight
+                </th>
+                <th>
+                  Video
+                </th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Barbell Deadlift
+                </td>
+                <td>
+                  3
+                </td>
+                <td>
+                  8
+                </td>
+                <td>
+                  10kg
+                </td>
+                <td>
+                  ---
+                </td>
+                <td />
+              </tr>
+              <tr>
+                <td>
+                  Wide-Grip Pull-Up
+                </td>
+                <td>
+                  3
+                </td>
+                <td>
+                  8
+                </td>
+                <td>
+                  35kg
+                </td>
+                <td>
+                  ---
+                </td>
+                <td />
+              </tr>
+            </tbody>
+          </table>
+        </form>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="edit"
+              onClick={[Function]}
+              type="button"
+            >
+              Edit
+            </button>,
+            <button
+              className="remove"
+              onClick={[Function]}
+              type="button"
+            >
+              Remove
+            </button>,
+          ],
+          "className": "btn-group",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Edit",
+              "className": "edit",
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "Edit",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Remove",
+              "className": "remove",
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "Remove",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3 />,
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Exercise
+                  </th>
+                  <th>
+                    Set
+                  </th>
+                  <th>
+                    Repetition
+                  </th>
+                  <th>
+                    Weight
+                  </th>
+                  <th>
+                    Video
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Barbell Deadlift
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    10kg
+                  </td>
+                  <td>
+                    ---
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    Wide-Grip Pull-Up
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    35kg
+                  </td>
+                  <td>
+                    ---
+                  </td>
+                  <td />
+                </tr>
+              </tbody>
+            </table>,
+            undefined,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <thead>
+                  <tr>
+                    <th>
+                      Exercise
+                    </th>
+                    <th>
+                      Set
+                    </th>
+                    <th>
+                      Repetition
+                    </th>
+                    <th>
+                      Weight
+                    </th>
+                    <th>
+                      Video
+                    </th>
+                    <th />
+                  </tr>
+                </thead>,
+                <tbody>
+                  <tr>
+                    <td>
+                      Barbell Deadlift
+                    </td>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      10kg
+                    </td>
+                    <td>
+                      ---
+                    </td>
+                    <td />
+                  </tr>
+                  <tr>
+                    <td>
+                      Wide-Grip Pull-Up
+                    </td>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      35kg
+                    </td>
+                    <td>
+                      ---
+                    </td>
+                    <td />
+                  </tr>
+                </tbody>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <tr>
+                    <th>
+                      Exercise
+                    </th>
+                    <th>
+                      Set
+                    </th>
+                    <th>
+                      Repetition
+                    </th>
+                    <th>
+                      Weight
+                    </th>
+                    <th>
+                      Video
+                    </th>
+                    <th />
+                  </tr>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <th>
+                        Exercise
+                      </th>,
+                      <th>
+                        Set
+                      </th>,
+                      <th>
+                        Repetition
+                      </th>,
+                      <th>
+                        Weight
+                      </th>,
+                      <th>
+                        Video
+                      </th>,
+                      <th />,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Exercise",
+                      },
+                      "ref": null,
+                      "rendered": "Exercise",
+                      "type": "th",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Set",
+                      },
+                      "ref": null,
+                      "rendered": "Set",
+                      "type": "th",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Repetition",
+                      },
+                      "ref": null,
+                      "rendered": "Repetition",
+                      "type": "th",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Weight",
+                      },
+                      "ref": null,
+                      "rendered": "Weight",
+                      "type": "th",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Video",
+                      },
+                      "ref": null,
+                      "rendered": "Video",
+                      "type": "th",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": "th",
+                    },
+                  ],
+                  "type": "tr",
+                },
+                "type": "thead",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    Array [
+                      <tr>
+                        <td>
+                          Barbell Deadlift
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          8
+                        </td>
+                        <td>
+                          10kg
+                        </td>
+                        <td>
+                          ---
+                        </td>
+                        <td />
+                      </tr>,
+                      <tr>
+                        <td>
+                          Wide-Grip Pull-Up
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          8
+                        </td>
+                        <td>
+                          35kg
+                        </td>
+                        <td>
+                          ---
+                        </td>
+                        <td />
+                      </tr>,
+                    ],
+                    undefined,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "0",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <td>
+                          Barbell Deadlift
+                        </td>,
+                        <td>
+                          3
+                        </td>,
+                        <td>
+                          8
+                        </td>,
+                        <td>
+                          10kg
+                        </td>,
+                        <td>
+                          ---
+                        </td>,
+                        <td />,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Barbell Deadlift",
+                        },
+                        "ref": null,
+                        "rendered": "Barbell Deadlift",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "3",
+                        },
+                        "ref": null,
+                        "rendered": "3",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "8",
+                        },
+                        "ref": null,
+                        "rendered": "8",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "10kg",
+                        },
+                        "ref": null,
+                        "rendered": "10kg",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "---",
+                        },
+                        "ref": null,
+                        "rendered": "---",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {},
+                        "ref": null,
+                        "rendered": null,
+                        "type": "td",
+                      },
+                    ],
+                    "type": "tr",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <td>
+                          Wide-Grip Pull-Up
+                        </td>,
+                        <td>
+                          3
+                        </td>,
+                        <td>
+                          8
+                        </td>,
+                        <td>
+                          35kg
+                        </td>,
+                        <td>
+                          ---
+                        </td>,
+                        <td />,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Wide-Grip Pull-Up",
+                        },
+                        "ref": null,
+                        "rendered": "Wide-Grip Pull-Up",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "3",
+                        },
+                        "ref": null,
+                        "rendered": "3",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "8",
+                        },
+                        "ref": null,
+                        "rendered": "8",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "35kg",
+                        },
+                        "ref": null,
+                        "rendered": "35kg",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "---",
+                        },
+                        "ref": null,
+                        "rendered": "---",
+                        "type": "td",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {},
+                        "ref": null,
+                        "rendered": null,
+                        "type": "td",
+                      },
+                    ],
+                    "type": "tr",
+                  },
+                  undefined,
+                ],
+                "type": "tbody",
+              },
+            ],
+            "type": "table",
+          },
+          undefined,
+        ],
+        "type": "form",
+      },
+    ],
+    "type": "li",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="btn-group"
+          >
+            <button
+              className="edit"
+              onClick={[Function]}
+              type="button"
+            >
+              Edit
+            </button>
+            <button
+              className="remove"
+              onClick={[Function]}
+              type="button"
+            >
+              Remove
+            </button>
+          </div>,
+          <form
+            onSubmit={[Function]}
+          >
+            <h3 />
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Exercise
+                  </th>
+                  <th>
+                    Set
+                  </th>
+                  <th>
+                    Repetition
+                  </th>
+                  <th>
+                    Weight
+                  </th>
+                  <th>
+                    Video
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Barbell Deadlift
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    10kg
+                  </td>
+                  <td>
+                    ---
+                  </td>
+                  <td />
+                </tr>
+                <tr>
+                  <td>
+                    Wide-Grip Pull-Up
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    8
+                  </td>
+                  <td>
+                    35kg
+                  </td>
+                  <td>
+                    ---
+                  </td>
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </form>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="edit"
+                onClick={[Function]}
+                type="button"
+              >
+                Edit
+              </button>,
+              <button
+                className="remove"
+                onClick={[Function]}
+                type="button"
+              >
+                Remove
+              </button>,
+            ],
+            "className": "btn-group",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Edit",
+                "className": "edit",
+                "onClick": [Function],
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "Edit",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Remove",
+                "className": "remove",
+                "onClick": [Function],
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "Remove",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3 />,
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      Exercise
+                    </th>
+                    <th>
+                      Set
+                    </th>
+                    <th>
+                      Repetition
+                    </th>
+                    <th>
+                      Weight
+                    </th>
+                    <th>
+                      Video
+                    </th>
+                    <th />
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Barbell Deadlift
+                    </td>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      10kg
+                    </td>
+                    <td>
+                      ---
+                    </td>
+                    <td />
+                  </tr>
+                  <tr>
+                    <td>
+                      Wide-Grip Pull-Up
+                    </td>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      35kg
+                    </td>
+                    <td>
+                      ---
+                    </td>
+                    <td />
+                  </tr>
+                </tbody>
+              </table>,
+              undefined,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <thead>
+                    <tr>
+                      <th>
+                        Exercise
+                      </th>
+                      <th>
+                        Set
+                      </th>
+                      <th>
+                        Repetition
+                      </th>
+                      <th>
+                        Weight
+                      </th>
+                      <th>
+                        Video
+                      </th>
+                      <th />
+                    </tr>
+                  </thead>,
+                  <tbody>
+                    <tr>
+                      <td>
+                        Barbell Deadlift
+                      </td>
+                      <td>
+                        3
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        10kg
+                      </td>
+                      <td>
+                        ---
+                      </td>
+                      <td />
+                    </tr>
+                    <tr>
+                      <td>
+                        Wide-Grip Pull-Up
+                      </td>
+                      <td>
+                        3
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        35kg
+                      </td>
+                      <td>
+                        ---
+                      </td>
+                      <td />
+                    </tr>
+                  </tbody>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <tr>
+                      <th>
+                        Exercise
+                      </th>
+                      <th>
+                        Set
+                      </th>
+                      <th>
+                        Repetition
+                      </th>
+                      <th>
+                        Weight
+                      </th>
+                      <th>
+                        Video
+                      </th>
+                      <th />
+                    </tr>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <th>
+                          Exercise
+                        </th>,
+                        <th>
+                          Set
+                        </th>,
+                        <th>
+                          Repetition
+                        </th>,
+                        <th>
+                          Weight
+                        </th>,
+                        <th>
+                          Video
+                        </th>,
+                        <th />,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Exercise",
+                        },
+                        "ref": null,
+                        "rendered": "Exercise",
+                        "type": "th",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Set",
+                        },
+                        "ref": null,
+                        "rendered": "Set",
+                        "type": "th",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Repetition",
+                        },
+                        "ref": null,
+                        "rendered": "Repetition",
+                        "type": "th",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Weight",
+                        },
+                        "ref": null,
+                        "rendered": "Weight",
+                        "type": "th",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Video",
+                        },
+                        "ref": null,
+                        "rendered": "Video",
+                        "type": "th",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {},
+                        "ref": null,
+                        "rendered": null,
+                        "type": "th",
+                      },
+                    ],
+                    "type": "tr",
+                  },
+                  "type": "thead",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      Array [
+                        <tr>
+                          <td>
+                            Barbell Deadlift
+                          </td>
+                          <td>
+                            3
+                          </td>
+                          <td>
+                            8
+                          </td>
+                          <td>
+                            10kg
+                          </td>
+                          <td>
+                            ---
+                          </td>
+                          <td />
+                        </tr>,
+                        <tr>
+                          <td>
+                            Wide-Grip Pull-Up
+                          </td>
+                          <td>
+                            3
+                          </td>
+                          <td>
+                            8
+                          </td>
+                          <td>
+                            35kg
+                          </td>
+                          <td>
+                            ---
+                          </td>
+                          <td />
+                        </tr>,
+                      ],
+                      undefined,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": "0",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <td>
+                            Barbell Deadlift
+                          </td>,
+                          <td>
+                            3
+                          </td>,
+                          <td>
+                            8
+                          </td>,
+                          <td>
+                            10kg
+                          </td>,
+                          <td>
+                            ---
+                          </td>,
+                          <td />,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Barbell Deadlift",
+                          },
+                          "ref": null,
+                          "rendered": "Barbell Deadlift",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "3",
+                          },
+                          "ref": null,
+                          "rendered": "3",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "8",
+                          },
+                          "ref": null,
+                          "rendered": "8",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "10kg",
+                          },
+                          "ref": null,
+                          "rendered": "10kg",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "---",
+                          },
+                          "ref": null,
+                          "rendered": "---",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {},
+                          "ref": null,
+                          "rendered": null,
+                          "type": "td",
+                        },
+                      ],
+                      "type": "tr",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "1",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <td>
+                            Wide-Grip Pull-Up
+                          </td>,
+                          <td>
+                            3
+                          </td>,
+                          <td>
+                            8
+                          </td>,
+                          <td>
+                            35kg
+                          </td>,
+                          <td>
+                            ---
+                          </td>,
+                          <td />,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Wide-Grip Pull-Up",
+                          },
+                          "ref": null,
+                          "rendered": "Wide-Grip Pull-Up",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "3",
+                          },
+                          "ref": null,
+                          "rendered": "3",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "8",
+                          },
+                          "ref": null,
+                          "rendered": "8",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "35kg",
+                          },
+                          "ref": null,
+                          "rendered": "35kg",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "---",
+                          },
+                          "ref": null,
+                          "rendered": "---",
+                          "type": "td",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {},
+                          "ref": null,
+                          "rendered": null,
+                          "type": "td",
+                        },
+                      ],
+                      "type": "tr",
+                    },
+                    undefined,
+                  ],
+                  "type": "tbody",
+                },
+              ],
+              "type": "table",
+            },
+            undefined,
+          ],
+          "type": "form",
+        },
+      ],
+      "type": "li",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;
 
-exports[`training list instances training component should render as expected 1`] = `
-<li>
-  <div
-    className="btn-group"
-  >
-    <button
-      className="edit"
-      onClick={[Function]}
-      type="button"
-    >
-      Edit
-    </button>
-    <button
-      className="remove"
-      onClick={[Function]}
-      type="button"
-    >
-      Remove
-    </button>
-  </div>
-  <form
-    onSubmit={[Function]}
-  >
-    <h3>
-      Leg
-    </h3>
-    <table>
-      <thead>
-        <tr>
-          <th>
-            Exercise
-          </th>
-          <th>
-            Set
-          </th>
-          <th>
-            Repetition
-          </th>
-          <th>
-            Weight
-          </th>
-          <th>
-            Video
-          </th>
-          <th />
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          key="0"
+exports[`training list training list component should return an expected html structure and call findAll method 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TrainingList
+    findAll={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+      }
+    }
+    trainingList={
+      Array [
+        Object {
+          "exerciseList": Array [
+            Object {
+              "name": "Barbell Deadlift",
+              "repetition": "8",
+              "set": "3",
+              "weight": "10kg",
+            },
+            Object {
+              "name": "Wide-Grip Pull-Up",
+              "repetition": "8",
+              "set": "3",
+              "weight": "35kg",
+            },
+          ],
+          "id": "1",
+          "title": "Leg",
+        },
+        Object {
+          "exerciseList": Array [
+            Object {
+              "name": "Flat Bench Dumbbell Press",
+              "repetition": "8",
+              "set": "3",
+              "weight": "22kg",
+            },
+            Object {
+              "name": "Barbell Bench Press",
+              "repetition": "8",
+              "set": "3",
+              "weight": "25kg",
+            },
+          ],
+          "id": "2",
+          "title": "Chest",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          Current Training
+        </h1>,
+        <ul
+          className="list-group"
         >
-          <td>
-            Barbell Deadlift
-          </td>
-          <td>
-            3
-          </td>
-          <td>
-            8
-          </td>
-          <td>
-            10kg
-          </td>
-          <td>
-            ---
-          </td>
-          <td />
-        </tr>
-        <tr
-          key="1"
-        >
-          <td>
-            Wide-Grip Pull-Up
-          </td>
-          <td>
-            3
-          </td>
-          <td>
-            8
-          </td>
-          <td>
-            35kg
-          </td>
-          <td>
-            ---
-          </td>
-          <td />
-        </tr>
-      </tbody>
-    </table>
-  </form>
-</li>
+          <Connect(Training)
+            exerciseList={
+              Array [
+                Object {
+                  "name": "Barbell Deadlift",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "10kg",
+                },
+                Object {
+                  "name": "Wide-Grip Pull-Up",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "35kg",
+                },
+              ]
+            }
+            id="1"
+            onAddNewExercise={[Function]}
+            onChangeExercise={undefined}
+            onChangeTitle={undefined}
+            onRemoveExercise={undefined}
+            onRemoveTraining={undefined}
+            onSubmit={undefined}
+            title="Leg"
+          />
+          <Connect(Training)
+            exerciseList={
+              Array [
+                Object {
+                  "name": "Flat Bench Dumbbell Press",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "22kg",
+                },
+                Object {
+                  "name": "Barbell Bench Press",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "25kg",
+                },
+              ]
+            }
+            id="2"
+            onAddNewExercise={[Function]}
+            onChangeExercise={undefined}
+            onChangeTitle={undefined}
+            onRemoveExercise={undefined}
+            onRemoveTraining={undefined}
+            onSubmit={undefined}
+            title="Chest"
+          />
+        </ul>,
+        <Connect(ShowVideo) />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Current Training",
+        },
+        "ref": null,
+        "rendered": "Current Training",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Connect(Training)
+              exerciseList={
+                Array [
+                  Object {
+                    "name": "Barbell Deadlift",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "10kg",
+                  },
+                  Object {
+                    "name": "Wide-Grip Pull-Up",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "35kg",
+                  },
+                ]
+              }
+              id="1"
+              onAddNewExercise={[Function]}
+              onChangeExercise={undefined}
+              onChangeTitle={undefined}
+              onRemoveExercise={undefined}
+              onRemoveTraining={undefined}
+              onSubmit={undefined}
+              title="Leg"
+            />,
+            <Connect(Training)
+              exerciseList={
+                Array [
+                  Object {
+                    "name": "Flat Bench Dumbbell Press",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "22kg",
+                  },
+                  Object {
+                    "name": "Barbell Bench Press",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "25kg",
+                  },
+                ]
+              }
+              id="2"
+              onAddNewExercise={[Function]}
+              onChangeExercise={undefined}
+              onChangeTitle={undefined}
+              onRemoveExercise={undefined}
+              onRemoveTraining={undefined}
+              onSubmit={undefined}
+              title="Chest"
+            />,
+          ],
+          "className": "list-group",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "class",
+            "props": Object {
+              "exerciseList": Array [
+                Object {
+                  "name": "Barbell Deadlift",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "10kg",
+                },
+                Object {
+                  "name": "Wide-Grip Pull-Up",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "35kg",
+                },
+              ],
+              "id": "1",
+              "onAddNewExercise": [Function],
+              "onChangeExercise": undefined,
+              "onChangeTitle": undefined,
+              "onRemoveExercise": undefined,
+              "onRemoveTraining": undefined,
+              "onSubmit": undefined,
+              "title": "Leg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "class",
+            "props": Object {
+              "exerciseList": Array [
+                Object {
+                  "name": "Flat Bench Dumbbell Press",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "22kg",
+                },
+                Object {
+                  "name": "Barbell Bench Press",
+                  "repetition": "8",
+                  "set": "3",
+                  "weight": "25kg",
+                },
+              ],
+              "id": "2",
+              "onAddNewExercise": [Function],
+              "onChangeExercise": undefined,
+              "onChangeTitle": undefined,
+              "onRemoveExercise": undefined,
+              "onRemoveTraining": undefined,
+              "onSubmit": undefined,
+              "title": "Chest",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "ul",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Current Training
+          </h1>,
+          <ul
+            className="list-group"
+          >
+            <Connect(Training)
+              exerciseList={
+                Array [
+                  Object {
+                    "name": "Barbell Deadlift",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "10kg",
+                  },
+                  Object {
+                    "name": "Wide-Grip Pull-Up",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "35kg",
+                  },
+                ]
+              }
+              id="1"
+              onAddNewExercise={[Function]}
+              onChangeExercise={undefined}
+              onChangeTitle={undefined}
+              onRemoveExercise={undefined}
+              onRemoveTraining={undefined}
+              onSubmit={undefined}
+              title="Leg"
+            />
+            <Connect(Training)
+              exerciseList={
+                Array [
+                  Object {
+                    "name": "Flat Bench Dumbbell Press",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "22kg",
+                  },
+                  Object {
+                    "name": "Barbell Bench Press",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "25kg",
+                  },
+                ]
+              }
+              id="2"
+              onAddNewExercise={[Function]}
+              onChangeExercise={undefined}
+              onChangeTitle={undefined}
+              onRemoveExercise={undefined}
+              onRemoveTraining={undefined}
+              onSubmit={undefined}
+              title="Chest"
+            />
+          </ul>,
+          <Connect(ShowVideo) />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Current Training",
+          },
+          "ref": null,
+          "rendered": "Current Training",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Connect(Training)
+                exerciseList={
+                  Array [
+                    Object {
+                      "name": "Barbell Deadlift",
+                      "repetition": "8",
+                      "set": "3",
+                      "weight": "10kg",
+                    },
+                    Object {
+                      "name": "Wide-Grip Pull-Up",
+                      "repetition": "8",
+                      "set": "3",
+                      "weight": "35kg",
+                    },
+                  ]
+                }
+                id="1"
+                onAddNewExercise={[Function]}
+                onChangeExercise={undefined}
+                onChangeTitle={undefined}
+                onRemoveExercise={undefined}
+                onRemoveTraining={undefined}
+                onSubmit={undefined}
+                title="Leg"
+              />,
+              <Connect(Training)
+                exerciseList={
+                  Array [
+                    Object {
+                      "name": "Flat Bench Dumbbell Press",
+                      "repetition": "8",
+                      "set": "3",
+                      "weight": "22kg",
+                    },
+                    Object {
+                      "name": "Barbell Bench Press",
+                      "repetition": "8",
+                      "set": "3",
+                      "weight": "25kg",
+                    },
+                  ]
+                }
+                id="2"
+                onAddNewExercise={[Function]}
+                onChangeExercise={undefined}
+                onChangeTitle={undefined}
+                onRemoveExercise={undefined}
+                onRemoveTraining={undefined}
+                onSubmit={undefined}
+                title="Chest"
+              />,
+            ],
+            "className": "list-group",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "class",
+              "props": Object {
+                "exerciseList": Array [
+                  Object {
+                    "name": "Barbell Deadlift",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "10kg",
+                  },
+                  Object {
+                    "name": "Wide-Grip Pull-Up",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "35kg",
+                  },
+                ],
+                "id": "1",
+                "onAddNewExercise": [Function],
+                "onChangeExercise": undefined,
+                "onChangeTitle": undefined,
+                "onRemoveExercise": undefined,
+                "onRemoveTraining": undefined,
+                "onSubmit": undefined,
+                "title": "Leg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "class",
+              "props": Object {
+                "exerciseList": Array [
+                  Object {
+                    "name": "Flat Bench Dumbbell Press",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "22kg",
+                  },
+                  Object {
+                    "name": "Barbell Bench Press",
+                    "repetition": "8",
+                    "set": "3",
+                    "weight": "25kg",
+                  },
+                ],
+                "id": "2",
+                "onAddNewExercise": [Function],
+                "onChangeExercise": undefined,
+                "onChangeTitle": undefined,
+                "onRemoveExercise": undefined,
+                "onRemoveTraining": undefined,
+                "onSubmit": undefined,
+                "title": "Chest",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;
 
-exports[`training list instances training list component should render as expected 1`] = `
-<div>
-  <h1>
-    Current Training
-  </h1>
-  <ul
-    className="list-group"
-  >
-    <Connect(Training)
-      exercises={
-        Array [
-          Object {
-            "name": "Barbell Deadlift",
-            "repetition": "8",
-            "set": "3",
-            "weight": "10kg",
+exports[`training list video component should return an expected html structure 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ShowVideo
+    onVideoUrlChange={[MockFunction]}
+    videoUrl="http://localhost:8080/video"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "ariaHideApp": true,
+      "bodyOpenClassName": "ReactModal__Body--open",
+      "children": Array [
+        <button
+          className="remove"
+          onClick={[Function]}
+          type="button"
+        >
+          Close
+        </button>,
+        <iframe
+          allowFullScreen={true}
+          frameBorder="0"
+          src="http://localhost:8080/video"
+        />,
+      ],
+      "className": "modal",
+      "closeTimeoutMS": 0,
+      "isOpen": true,
+      "onRequestClose": [Function],
+      "overlayClassName": "overlay",
+      "parentSelector": [Function],
+      "portalClassName": "ReactModalPortal",
+      "shouldCloseOnEsc": true,
+      "shouldCloseOnOverlayClick": true,
+      "shouldFocusAfterRender": true,
+      "shouldReturnFocusAfterClose": true,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Close",
+          "className": "remove",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Close",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "allowFullScreen": true,
+          "frameBorder": "0",
+          "src": "http://localhost:8080/video",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "iframe",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "ariaHideApp": true,
+        "bodyOpenClassName": "ReactModal__Body--open",
+        "children": Array [
+          <button
+            className="remove"
+            onClick={[Function]}
+            type="button"
+          >
+            Close
+          </button>,
+          <iframe
+            allowFullScreen={true}
+            frameBorder="0"
+            src="http://localhost:8080/video"
+          />,
+        ],
+        "className": "modal",
+        "closeTimeoutMS": 0,
+        "isOpen": true,
+        "onRequestClose": [Function],
+        "overlayClassName": "overlay",
+        "parentSelector": [Function],
+        "portalClassName": "ReactModalPortal",
+        "shouldCloseOnEsc": true,
+        "shouldCloseOnOverlayClick": true,
+        "shouldFocusAfterRender": true,
+        "shouldReturnFocusAfterClose": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Close",
+            "className": "remove",
+            "onClick": [Function],
+            "type": "button",
           },
-          Object {
-            "name": "Wide-Grip Pull-Up",
-            "repetition": "8",
-            "set": "3",
-            "weight": "35kg",
+          "ref": null,
+          "rendered": "Close",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "allowFullScreen": true,
+            "frameBorder": "0",
+            "src": "http://localhost:8080/video",
           },
-        ]
-      }
-      index="1"
-      key="1"
-      onButtonClick={[Function]}
-      title="Leg"
-    />
-    <Connect(Training)
-      exercises={
-        Array [
-          Object {
-            "name": "Flat Bench Dumbbell Press",
-            "repetition": "8",
-            "set": "3",
-            "weight": "22kg",
-          },
-          Object {
-            "name": "Barbell Bench Press",
-            "repetition": "8",
-            "set": "3",
-            "weight": "25kg",
-          },
-        ]
-      }
-      index="2"
-      key="2"
-      onButtonClick={[Function]}
-      title="Chest"
-    />
-  </ul>
-  <Connect(ShowVideo) />
-</div>
+          "ref": null,
+          "rendered": null,
+          "type": "iframe",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;

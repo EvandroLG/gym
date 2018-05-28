@@ -8,16 +8,18 @@ import ExerciseFields from '../components/new_training/ExerciseFields';
 
 describe('new training', () => {
 
-  it('new training component should render as expected', () => {
-    const props = { title: '', exerciseList: [] };
-    const newTraining = mount(<NewTraining { ...props } />);
+  describe('instance', () => {
+    it('new training component should render as expected', () => {
+      const props = { title: '', exerciseList: [] };
+      const newTraining = mount(<NewTraining { ...props } />);
 
-    verifySnapshot(newTraining);
-  });
+      verifySnapshot(newTraining);
+    });
 
-  it('exercise fields component should render as expected', () => {
-    const exerciseFields = shallow(<ExerciseFields />);
-    verifySnapshot(exerciseFields);
+    it('exercise fields component should render as expected', () => {
+      const exerciseFields = shallow(<ExerciseFields />);
+      verifySnapshot(exerciseFields);
+    });
   });
 
   describe('events', () => {

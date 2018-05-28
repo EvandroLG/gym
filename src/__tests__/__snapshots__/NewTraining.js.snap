@@ -32,7 +32,7 @@ exports[`new training events should call correct callback after click on remove 
 }
 `;
 
-exports[`new training exercise fields component should render as expected 1`] = `
+exports[`new training instance exercise fields component should render as expected 1`] = `
 <div
   className="row"
 >
@@ -120,7 +120,7 @@ exports[`new training exercise fields component should render as expected 1`] = 
 </div>
 `;
 
-exports[`new training new training component should render as expected 1`] = `
+exports[`new training instance new training component should render as expected 1`] = `
 <NewTraining
   exerciseList={Array []}
   title=""

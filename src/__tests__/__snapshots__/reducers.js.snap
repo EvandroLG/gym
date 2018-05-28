@@ -6,6 +6,7 @@ Object {
     "exerciseList": Array [],
     "title": "",
   },
+  "trainingList": Array [],
   "videoUrl": "https://www.youtube.com/watch?v=04p4MWfhpAI",
 }
 `;

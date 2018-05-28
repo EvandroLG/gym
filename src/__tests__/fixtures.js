@@ -2,7 +2,7 @@ export default [
   {
     "id": "1",
     "title": "Leg",
-    "exercises": [
+    "exerciseList": [
       {
         "name": "Barbell Deadlift",
         "repetition": "8",
@@ -22,7 +22,7 @@ export default [
   {
     "id": "2",
     "title": "Chest",
-    "exercises": [
+    "exerciseList": [
       {
         "name": "Flat Bench Dumbbell Press",
         "repetition": "8",

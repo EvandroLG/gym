@@ -1,42 +1,57 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DB from '../libs/db';
-import ExerciseField from '../components/training_list/ExerciseField';
-import Training, { Unwrapped as UnwrappedTraining } from '../components/training_list/Training';
-import TrainingList from '../components/training_list/Index';
 import fixtures from './fixtures';
+import TrainingList from '../components/training_list/';
+import ShowVideo from '../components/training_list/ShowVideo';
+import Training from '../components/training_list/Training';
 
 /* global verifySnapshot */
 
 describe('training list', () => {
-  describe('instances', () => {
-    it('execise field component should render as expected', () => {
-      const component = shallow(<ExerciseField />);
-      verifySnapshot(component);
-    });
-
-    it('training component should render as expected', () => {
-      DB.prototype._initialize = () => {}; 
-      DB.prototype.update = () => {};
-
+  describe('training list component', () => {
+    it('should return an expected html structure and call findAll method', () => {
+      const mockCallback = jest.fn();
       const props = {
-        index: '1',
-        title: fixtures[0].title,
-        exercises: fixtures[0].exercises,
-        onButtonClick: () => {}
+        findAll: mockCallback,
+        trainingList: fixtures
       };
 
-      const component = shallow(<UnwrappedTraining key={ props.index } { ...props } />);
-      verifySnapshot(component);
+      const trainingList = shallow(<TrainingList { ...props } />);
+
+      expect(trainingList).toMatchSnapshot();
+      expect(mockCallback).toBeCalled();
     });
 
-    it('training list component should render as expected', () => {
-      DB.prototype.findAll = (callback) => {
-        callback(fixtures);
-      };
+  });
 
-      const component = shallow(<TrainingList />);
-      verifySnapshot(component);
+  describe('video component', () => {
+    const mockCallback = jest.fn();
+    const props = {
+      videoUrl: 'http://localhost:8080/video',
+      onVideoUrlChange: mockCallback
+    };
+    const showVideo = shallow(<ShowVideo { ...props } />);
+
+    it('should return an expected html structure', () => {
+      expect(showVideo).toMatchSnapshot();
+    });
+
+    it('should call method after click on close button', () => {
+      showVideo.find('.remove').simulate('click');
+
+      expect(mockCallback).toBeCalled();
+      expect(mockCallback).toBeCalledWith('');
+    });
+  });
+
+  describe('training component', () => {
+    const props = {
+      exerciseList: fixtures[0].exerciseList
+    };
+    const training = shallow(<Training { ...props } />);
+
+    it('should return html structure as expected', () => {
+      expect(training).toMatchSnapshot();
     });
   });
 });
