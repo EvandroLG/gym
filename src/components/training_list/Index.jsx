@@ -12,10 +12,6 @@ export default class TrainingList extends Component {
     this.props.findAll();
   }
 
-  _getTrainingList() {
-    this.db.findAll(this._populateTrainingList.bind(this));
-  }
-
   _renderTrainingList() {
     return this.props.trainingList.map(({ id, title, exerciseList }) => {
       const props = {
