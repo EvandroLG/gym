@@ -49,42 +49,25 @@ export default class Training extends Component {
     onChangeExercise(id, idExercise, property, value);
   }
 
+  _renderExerciseField(id) {
+    ['name', 'set', 'repetition', 'weight', 'youtube'].map((value) => {
+      return (
+        <ExerciseField
+          id={id}
+          value={ exercise[value] }
+          property={ value }
+          onInputChange={ this._onChangeExercise }
+        />
+      )
+    });
+  };
+
   _renderExerciseForm(exercise) {
     const { id } = exercise;
 
     return (
       <tr key={ id }>
-        <ExerciseField
-          id={id}
-          value={ exercise.name }
-          property='name'
-          onInputChange={ this._onChangeExercise }
-        />
-        <ExerciseField
-          id={id}
-          value={ exercise.set }
-          property='set'
-          onInputChange={ this._onChangeExercise }
-        />
-        <ExerciseField
-          id={id}
-          value={ exercise.repetition }
-          property='repetition'
-          onInputChange={ this._onChangeExercise }
-        />
-        <ExerciseField
-          id={id}
-          value={ exercise.weight }
-          property='weight'
-          onInputChange={ this._onChangeExercise }
-        />
-        <ExerciseField
-          id={id}
-          value={ exercise.youtube }
-          property='youtube'
-          onInputChange={ this._onChangeExercise }
-        />
-
+        { this._renderExerciseField(id) }
         <td>
           <button
             type="button"
