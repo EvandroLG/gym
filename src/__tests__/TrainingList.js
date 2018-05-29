@@ -45,13 +45,40 @@ describe('training list', () => {
   });
 
   describe('training component', () => {
-    const props = {
-      exerciseList: fixtures[0].exerciseList
-    };
-    const training = shallow(<Training { ...props } />);
+    function mountTraining(keyProperty, mockCallback) {
+      const props = {
+        id: 1,
+        exerciseList: fixtures[0].exerciseList,
+        [keyProperty]: mockCallback,
+      };
+
+      return shallow(<Training { ...props } />);
+    }
 
     it('should return html structure as expected', () => {
-      expect(training).toMatchSnapshot();
+      expect(mountTraining()).toMatchSnapshot();
+    });
+
+    it('should call correct method after click on remove button', () => {
+      const mockCallback = jest.fn();
+      const training = mountTraining('onRemoveTraining', mockCallback);
+
+      training.find('.remove').simulate('click');
+
+      expect(mockCallback).toBeCalled();
+      expect(mockCallback).toBeCalledWith(1);
+    });
+
+    it('should call correct method after submit form', () => {
+      const mockCallback = jest.fn();
+      const training = mountTraining('onSubmit', mockCallback);
+
+      training.find('.edit').simulate('click');
+      training.find('form').simulate('submit', {
+        preventDefault: () => {}
+      });
+
+      expect(mockCallback).toMatchSnapshot();
     });
   });
 });

@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`training list training component should call correct method after submit form 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      1,
+      Object {
+        "exerciseList": Array [
+          Object {
+            "name": "Barbell Deadlift",
+            "repetition": "8",
+            "set": "3",
+            "weight": "10kg",
+          },
+          Object {
+            "name": "Wide-Grip Pull-Up",
+            "repetition": "8",
+            "set": "3",
+            "weight": "35kg",
+          },
+        ],
+        "title": undefined,
+      },
+    ],
+  ],
+}
+`;
+
 exports[`training list training component should return html structure as expected 1`] = `
 ShallowWrapper {
   "length": 1,
@@ -21,6 +48,8 @@ ShallowWrapper {
         },
       ]
     }
+    id={1}
+    undefined={undefined}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
