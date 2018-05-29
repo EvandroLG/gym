@@ -1,38 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`new training events should call correct callback after change input 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      1,
-      "name",
-      "Dumbbel Press",
-    ],
-  ],
-}
-`;
-
-exports[`new training events should call correct callback after change title 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      "Chest",
-    ],
-  ],
-}
-`;
-
-exports[`new training events should call correct callback after click on remove button 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      1,
-    ],
-  ],
-}
-`;
-
-exports[`new training instance exercise fields component should render as expected 1`] = `
+exports[`new training exercise fields component exercise fields component should render as expected 1`] = `
 <div
   className="row"
 >
@@ -40,12 +8,12 @@ exports[`new training instance exercise fields component should render as expect
     className="col"
   >
     <label
-      htmlFor="exercise_name_undefined"
+      htmlFor="exercise_name_1"
     >
       Name
     </label>
     <input
-      id="exercise_name_undefined"
+      id="exercise_name_1"
       onChange={[Function]}
       type="text"
     />
@@ -54,12 +22,12 @@ exports[`new training instance exercise fields component should render as expect
     className="col"
   >
     <label
-      htmlFor="exercise_set_undefined"
+      htmlFor="exercise_set_1"
     >
       Set
     </label>
     <input
-      id="exercise_set_undefined"
+      id="exercise_set_1"
       onChange={[Function]}
       type="text"
     />
@@ -68,12 +36,12 @@ exports[`new training instance exercise fields component should render as expect
     className="col"
   >
     <label
-      htmlFor="exercise_repetition_undefined"
+      htmlFor="exercise_repetition_1"
     >
       Repetition
     </label>
     <input
-      id="exercise_repetition_undefined"
+      id="exercise_repetition_1"
       onChange={[Function]}
       type="text"
     />
@@ -82,12 +50,12 @@ exports[`new training instance exercise fields component should render as expect
     className="col"
   >
     <label
-      htmlFor="exercise_weight_undefined"
+      htmlFor="exercise_weight_1"
     >
       Weight
     </label>
     <input
-      id="exercise_weight_undefined"
+      id="exercise_weight_1"
       onChange={[Function]}
       type="text"
     />
@@ -96,12 +64,12 @@ exports[`new training instance exercise fields component should render as expect
     className="col"
   >
     <label
-      htmlFor="exercise_youtube_undefined"
+      htmlFor="exercise_youtube_1"
     >
       Youtube
     </label>
     <input
-      id="exercise_youtube_undefined"
+      id="exercise_youtube_1"
       onChange={[Function]}
       type="text"
     />
@@ -120,7 +88,17 @@ exports[`new training instance exercise fields component should render as expect
 </div>
 `;
 
-exports[`new training instance new training component should render as expected 1`] = `
+exports[`new training exercise fields component should call correct callback after click on remove button 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      1,
+    ],
+  ],
+}
+`;
+
+exports[`new training new training component new training component should render as expected 1`] = `
 <NewTraining
   exerciseList={Array []}
   title=""
@@ -161,4 +139,14 @@ exports[`new training instance new training component should render as expected 
     </form>
   </div>
 </NewTraining>
+`;
+
+exports[`new training new training component should call correct callback after change title 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "Chest",
+    ],
+  ],
+}
 `;
