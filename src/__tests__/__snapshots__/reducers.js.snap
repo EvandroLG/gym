@@ -89,6 +89,152 @@ Object {
 }
 `;
 
+exports[`reducers training list should handle ADD_NEW_EXERCISE 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 0,
+        "name": "Pull-Down",
+        "repetition": "8",
+        "set": "3",
+        "weight": "10kg",
+      },
+      Object {
+        "id": 1,
+        "name": "Wide-Grip Pull-Up",
+        "repetition": "8",
+        "set": "3",
+        "weight": "35kg",
+      },
+    ],
+    "id": "1",
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers training list should handle CHANGE_EXERCISE_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 0,
+        "name": "Pull-Down",
+        "repetition": "8",
+        "set": "3",
+        "weight": "10kg",
+      },
+      Object {
+        "id": 1,
+        "name": "Wide-Grip Pull-Up",
+        "repetition": "8",
+        "set": "3",
+        "weight": "35kg",
+      },
+    ],
+    "id": "1",
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers training list should handle CHANGE_TITLE_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 0,
+        "name": "Pull-Down",
+        "repetition": "8",
+        "set": "3",
+        "weight": "10kg",
+      },
+      Object {
+        "id": 1,
+        "name": "Wide-Grip Pull-Up",
+        "repetition": "8",
+        "set": "3",
+        "weight": "35kg",
+      },
+    ],
+    "id": "1",
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers training list should handle LOAD_TRAINING_LIST 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [],
+    "title": "",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers training list should handle REMOVE_EXERCISE 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 0,
+        "name": "Pull-Down",
+        "repetition": "8",
+        "set": "3",
+        "weight": "10kg",
+      },
+      Object {
+        "id": 1,
+        "name": "Wide-Grip Pull-Up",
+        "repetition": "8",
+        "set": "3",
+        "weight": "35kg",
+      },
+    ],
+    "id": "1",
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers training list should handle REMOVE_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 0,
+        "name": "Pull-Down",
+        "repetition": "8",
+        "set": "3",
+        "weight": "10kg",
+      },
+      Object {
+        "id": 1,
+        "name": "Wide-Grip Pull-Up",
+        "repetition": "8",
+        "set": "3",
+        "weight": "35kg",
+      },
+    ],
+    "id": "1",
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
 exports[`reducers video url should handle SET_VIDEO_URL 1`] = `
 Object {
   "newTraining": Object {

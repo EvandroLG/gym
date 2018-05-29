@@ -60,4 +60,52 @@ describe('reducers', () => {
       }, initialFakeState);
     });
   });
+
+  describe('training list', () => {
+    it('should handle LOAD_TRAINING_LIST', () => {
+      verifyReducers({
+        type: 'LOAD_TRAINING_LIST',
+        trainingList: []
+      });
+    });
+
+    it('should handle REMOVE_TRAINING', () => {
+      verifyReducers({
+        type: 'REMOVE_TRAINING',
+        id: 0
+      }, initialFakeState);
+    });
+
+    it('should handle ADD_NEW_EXERCISE', () => {
+      verifyReducers({
+        type: 'ADD_NEW_EXERCISE',
+        id: 1
+      }, initialFakeState);
+    });
+
+    it('should handle REMOVE_EXERCISE', () => {
+      verifyReducers({
+        type: 'REMOVE_EXERCISE',
+        idTraining: 1,
+        idExercise: 0
+      }, initialFakeState);
+    });
+
+    it('should handle CHANGE_TITLE_TRAINING', () => {
+      verifyReducers({
+        type: 'CHANGE_TITLE_TRAINING',
+        id: 1,
+        title: 'Arms'
+      }, initialFakeState);
+    });
+
+    it('should handle CHANGE_EXERCISE_TRAINING', () => {
+      verifyReducers({
+        type: 'CHANGE_EXERCISE_TRAINING',
+        idTraining: 1,
+        idExercise: 0,
+        value: 'Pull-Down'
+      }, initialFakeState);
+    });
+  });
 });
