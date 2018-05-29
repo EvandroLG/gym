@@ -49,10 +49,15 @@ export default class Training extends Component {
     onChangeExercise(id, idExercise, property, value);
   }
 
-  _renderExerciseField(id) {
-    ['name', 'set', 'repetition', 'weight', 'youtube'].map((value) => {
+  _renderExerciseField(exercise) {
+    const { id } = exercise;
+
+    return ['name', 'set', 'repetition', 'weight', 'youtube'].map((value, index) => {
+      const key = `${id}_${index}`;
+
       return (
         <ExerciseField
+          key={key}
           id={id}
           value={ exercise[value] }
           property={ value }
@@ -67,12 +72,12 @@ export default class Training extends Component {
 
     return (
       <tr key={ id }>
-        { this._renderExerciseField(id) }
+        { this._renderExerciseField(exercise) }
         <td>
           <button
             type="button"
             className="remove"
-            onClick={ () => this.props.onRemoveExercise(this.props.id, exercise.id) }>
+            onClick={ () => this.props.onRemoveExercise(this.props.id, id) }>
             Remove
           </button>
         </td>
