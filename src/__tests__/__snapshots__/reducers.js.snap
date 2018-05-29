@@ -1,6 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`reducers should return an object with the same value passed as a parameter 1`] = `
+exports[`reducers new training should handle ADD_EXERCISE_NEW_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 0,
+        "name": "",
+        "repetition": "",
+        "set": "",
+        "weight": "",
+        "youtube": "",
+      },
+    ],
+    "title": "",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers new training should handle EMPTY_NEW_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [],
+    "title": "",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers new training should handle REMOVE_EXERCISE_NEW_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 1,
+        "name": "Wide-Grip Pull-Up",
+        "repetition": "8",
+        "set": "3",
+        "weight": "35kg",
+      },
+    ],
+    "id": "1",
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers new training should handle SET_FIELD_NEW_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [
+      Object {
+        "id": 0,
+        "name": "Pull-Down",
+        "repetition": "8",
+        "set": "3",
+        "weight": "10kg",
+      },
+      Object {
+        "id": 1,
+        "name": "Wide-Grip Pull-Up",
+        "repetition": "8",
+        "set": "3",
+        "weight": "35kg",
+      },
+    ],
+    "id": "1",
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers new training should handle SET_TITLE_NEW_TRAINING 1`] = `
+Object {
+  "newTraining": Object {
+    "exerciseList": Array [],
+    "title": "Leg",
+  },
+  "trainingList": Array [],
+  "videoUrl": "",
+}
+`;
+
+exports[`reducers video url should handle SET_VIDEO_URL 1`] = `
 Object {
   "newTraining": Object {
     "exerciseList": Array [],

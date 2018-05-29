@@ -4,6 +4,7 @@ export default [
     "title": "Leg",
     "exerciseList": [
       {
+        "id": 0,
         "name": "Barbell Deadlift",
         "repetition": "8",
         "set": "3",
@@ -11,6 +12,7 @@ export default [
       },
 
       {
+        "id": 1,
         "name": "Wide-Grip Pull-Up",
         "repetition": "8",
         "set": "3",
@@ -24,6 +26,7 @@ export default [
     "title": "Chest",
     "exerciseList": [
       {
+        "id": 0,
         "name": "Flat Bench Dumbbell Press",
         "repetition": "8",
         "set": "3",
@@ -31,6 +34,7 @@ export default [
       },
 
       {
+        "id": 1,
         "name": "Barbell Bench Press",
         "repetition": "8",
         "set": "3",
