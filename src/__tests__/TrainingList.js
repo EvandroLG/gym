@@ -4,6 +4,7 @@ import fixtures from './fixtures';
 import TrainingList from '../components/training_list/';
 import ShowVideo from '../components/training_list/ShowVideo';
 import Training from '../components/training_list/Training';
+import ExerciseField from '../components/training_list/ExerciseField';
 
 /* global verifySnapshot */
 
@@ -79,6 +80,38 @@ describe('training list', () => {
       });
 
       expect(mockCallback).toMatchSnapshot();
+    });
+  });
+
+  describe('exercise field component', () => {
+    function mountExerciseField(keyProperty, mockCallback) {
+      const props = {
+        id: 1,
+        property: 'name',
+        value: 'Barbell Deadlift',
+        [keyProperty]: mockCallback
+      };
+
+      return shallow(<ExerciseField { ...props } />);
+    }
+
+    it('should render component as expected', () => {
+      expect(mountExerciseField()).toMatchSnapshot();
+    });
+
+    it('should call correct method after change on input', () => {
+      const mockCallback = jest.fn();
+      const exerciseField = mountExerciseField('onInputChange', mockCallback);
+      const value = 'Pull-Down';
+
+      exerciseField.find('input').simulate('change', {
+        target: {
+          value
+        }
+      });
+
+      expect(mockCallback).toBeCalled()
+      expect(mockCallback).toBeCalledWith(1, 'name', value);
     });
   });
 });

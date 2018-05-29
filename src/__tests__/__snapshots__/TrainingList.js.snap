@@ -1,5 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`training list exercise field component should render component as expected 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExerciseField
+    id={1}
+    property="name"
+    undefined={undefined}
+    value="Barbell Deadlift"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <input
+        onChange={[Function]}
+        type="text"
+        value="Barbell Deadlift"
+      />,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "onChange": [Function],
+        "type": "text",
+        "value": "Barbell Deadlift",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "input",
+    },
+    "type": "td",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <input
+          onChange={[Function]}
+          type="text"
+          value="Barbell Deadlift"
+        />,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "onChange": [Function],
+          "type": "text",
+          "value": "Barbell Deadlift",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      "type": "td",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`training list training component should call correct method after submit form 1`] = `
 [MockFunction] {
   "calls": Array [
