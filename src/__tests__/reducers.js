@@ -3,76 +3,61 @@ import fixtures from './fixtures';
 
 describe('reducers', () => {
 
+  const initialFakeState = {
+    videoUrl: '',
+    trainingList: [],
+    newTraining: fixtures[0]
+  };
+
+  function verifyReducers(action, state) {
+    expect(reducers(state, action)).toMatchSnapshot();
+  }
+
   describe('video url', () => {
     it('should handle SET_VIDEO_URL', () => {
-      const url = 'https://www.youtube.com/watch?v=04p4MWfhpAI';
-
-      const state = reducers(undefined, {
+      verifyReducers({
         type: 'SET_VIDEO_URL',
-        url
+        url: 'https://www.youtube.com/watch?v=04p4MWfhpAI'
       });
-
-      expect(state).toMatchSnapshot();
     });
   });
 
   describe('new training', () => {
     it('should handle SET_TITLE_NEW_TRAINING', () => {
       const { title } = fixtures[0];
-      const state = reducers(undefined, {
+
+      verifyReducers({
         type: 'SET_TITLE_NEW_TRAINING',
         title
       });
-
-      expect(state).toMatchSnapshot();
     });
 
     it('should handle ADD_EXERCISE_NEW_TRAINING', () => {
-      const state = reducers(undefined, {
+      verifyReducers({
         type: 'ADD_EXERCISE_NEW_TRAINING',
       });
-
-      expect(state).toMatchSnapshot();
     });
 
     it('should handle REMOVE_EXERCISE_NEW_TRAINING', () => {
-      const state = reducers({
-        videoUrl: '',
-        trainingList: [],
-        newTraining: fixtures[0]
-      }, {
+      verifyReducers({
         type: 'REMOVE_EXERCISE_NEW_TRAINING',
         id: 0
-      });
-
-      expect(state).toMatchSnapshot();
+      }, initialFakeState);
     });
 
     it('should handle SET_FIELD_NEW_TRAINING', () => {
-      const state = reducers({
-        videoUrl: '',
-        trainingList: [],
-        newTraining: fixtures[0]
-      }, {
+      verifyReducers({
         type: 'SET_FIELD_NEW_TRAINING',
         id: 0,
         fieldName: 'name',
         value: 'Pull-Down'
-      });
-
-      expect(state).toMatchSnapshot();
+      }, initialFakeState);
     });
 
     it('should handle EMPTY_NEW_TRAINING', () => {
-      const state = reducers({
-        videoUrl: '',
-        trainingList: [],
-        newTraining: fixtures[0]
-      }, {
+      verifyReducers({
         type: 'EMPTY_NEW_TRAINING',
-      });
-
-      expect(state).toMatchSnapshot();
+      }, initialFakeState);
     });
   });
 });

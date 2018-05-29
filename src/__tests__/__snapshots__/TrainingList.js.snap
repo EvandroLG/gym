@@ -91,12 +91,14 @@ exports[`training list training component should call correct method after submi
       Object {
         "exerciseList": Array [
           Object {
+            "id": 0,
             "name": "Barbell Deadlift",
             "repetition": "8",
             "set": "3",
             "weight": "10kg",
           },
           Object {
+            "id": 1,
             "name": "Wide-Grip Pull-Up",
             "repetition": "8",
             "set": "3",
@@ -118,12 +120,14 @@ ShallowWrapper {
     exerciseList={
       Array [
         Object {
+          "id": 0,
           "name": "Barbell Deadlift",
           "repetition": "8",
           "set": "3",
           "weight": "10kg",
         },
         Object {
+          "id": 1,
           "name": "Wide-Grip Pull-Up",
           "repetition": "8",
           "set": "3",
@@ -1510,12 +1514,14 @@ ShallowWrapper {
         Object {
           "exerciseList": Array [
             Object {
+              "id": 0,
               "name": "Barbell Deadlift",
               "repetition": "8",
               "set": "3",
               "weight": "10kg",
             },
             Object {
+              "id": 1,
               "name": "Wide-Grip Pull-Up",
               "repetition": "8",
               "set": "3",
@@ -1528,12 +1534,14 @@ ShallowWrapper {
         Object {
           "exerciseList": Array [
             Object {
+              "id": 0,
               "name": "Flat Bench Dumbbell Press",
               "repetition": "8",
               "set": "3",
               "weight": "22kg",
             },
             Object {
+              "id": 1,
               "name": "Barbell Bench Press",
               "repetition": "8",
               "set": "3",
@@ -1569,12 +1577,14 @@ ShallowWrapper {
             exerciseList={
               Array [
                 Object {
+                  "id": 0,
                   "name": "Barbell Deadlift",
                   "repetition": "8",
                   "set": "3",
                   "weight": "10kg",
                 },
                 Object {
+                  "id": 1,
                   "name": "Wide-Grip Pull-Up",
                   "repetition": "8",
                   "set": "3",
@@ -1595,12 +1605,14 @@ ShallowWrapper {
             exerciseList={
               Array [
                 Object {
+                  "id": 0,
                   "name": "Flat Bench Dumbbell Press",
                   "repetition": "8",
                   "set": "3",
                   "weight": "22kg",
                 },
                 Object {
+                  "id": 1,
                   "name": "Barbell Bench Press",
                   "repetition": "8",
                   "set": "3",
@@ -1644,12 +1656,14 @@ ShallowWrapper {
               exerciseList={
                 Array [
                   Object {
+                    "id": 0,
                     "name": "Barbell Deadlift",
                     "repetition": "8",
                     "set": "3",
                     "weight": "10kg",
                   },
                   Object {
+                    "id": 1,
                     "name": "Wide-Grip Pull-Up",
                     "repetition": "8",
                     "set": "3",
@@ -1670,12 +1684,14 @@ ShallowWrapper {
               exerciseList={
                 Array [
                   Object {
+                    "id": 0,
                     "name": "Flat Bench Dumbbell Press",
                     "repetition": "8",
                     "set": "3",
                     "weight": "22kg",
                   },
                   Object {
+                    "id": 1,
                     "name": "Barbell Bench Press",
                     "repetition": "8",
                     "set": "3",
@@ -1704,12 +1720,14 @@ ShallowWrapper {
             "props": Object {
               "exerciseList": Array [
                 Object {
+                  "id": 0,
                   "name": "Barbell Deadlift",
                   "repetition": "8",
                   "set": "3",
                   "weight": "10kg",
                 },
                 Object {
+                  "id": 1,
                   "name": "Wide-Grip Pull-Up",
                   "repetition": "8",
                   "set": "3",
@@ -1736,12 +1754,14 @@ ShallowWrapper {
             "props": Object {
               "exerciseList": Array [
                 Object {
+                  "id": 0,
                   "name": "Flat Bench Dumbbell Press",
                   "repetition": "8",
                   "set": "3",
                   "weight": "22kg",
                 },
                 Object {
+                  "id": 1,
                   "name": "Barbell Bench Press",
                   "repetition": "8",
                   "set": "3",
@@ -1793,12 +1813,14 @@ ShallowWrapper {
               exerciseList={
                 Array [
                   Object {
+                    "id": 0,
                     "name": "Barbell Deadlift",
                     "repetition": "8",
                     "set": "3",
                     "weight": "10kg",
                   },
                   Object {
+                    "id": 1,
                     "name": "Wide-Grip Pull-Up",
                     "repetition": "8",
                     "set": "3",
@@ -1819,12 +1841,14 @@ ShallowWrapper {
               exerciseList={
                 Array [
                   Object {
+                    "id": 0,
                     "name": "Flat Bench Dumbbell Press",
                     "repetition": "8",
                     "set": "3",
                     "weight": "22kg",
                   },
                   Object {
+                    "id": 1,
                     "name": "Barbell Bench Press",
                     "repetition": "8",
                     "set": "3",
@@ -1868,12 +1892,14 @@ ShallowWrapper {
                 exerciseList={
                   Array [
                     Object {
+                      "id": 0,
                       "name": "Barbell Deadlift",
                       "repetition": "8",
                       "set": "3",
                       "weight": "10kg",
                     },
                     Object {
+                      "id": 1,
                       "name": "Wide-Grip Pull-Up",
                       "repetition": "8",
                       "set": "3",
@@ -1894,12 +1920,14 @@ ShallowWrapper {
                 exerciseList={
                   Array [
                     Object {
+                      "id": 0,
                       "name": "Flat Bench Dumbbell Press",
                       "repetition": "8",
                       "set": "3",
                       "weight": "22kg",
                     },
                     Object {
+                      "id": 1,
                       "name": "Barbell Bench Press",
                       "repetition": "8",
                       "set": "3",
@@ -1928,12 +1956,14 @@ ShallowWrapper {
               "props": Object {
                 "exerciseList": Array [
                   Object {
+                    "id": 0,
                     "name": "Barbell Deadlift",
                     "repetition": "8",
                     "set": "3",
                     "weight": "10kg",
                   },
                   Object {
+                    "id": 1,
                     "name": "Wide-Grip Pull-Up",
                     "repetition": "8",
                     "set": "3",
@@ -1960,12 +1990,14 @@ ShallowWrapper {
               "props": Object {
                 "exerciseList": Array [
                   Object {
+                    "id": 0,
                     "name": "Flat Bench Dumbbell Press",
                     "repetition": "8",
                     "set": "3",
                     "weight": "22kg",
                   },
                   Object {
+                    "id": 1,
                     "name": "Barbell Bench Press",
                     "repetition": "8",
                     "set": "3",
