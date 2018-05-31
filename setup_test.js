@@ -12,3 +12,13 @@ global.verifySnapshot = (component) => {
 global.verifyMapStateToProps = (mapState, params, key,  output) => {
   expect(mapState(params)[key]).toEqual(output);
 };
+
+global.verifyDispatchToProps = (mapDispatch, method, props, calledWith) => {
+  const mockCallback = jest.fn();
+  const output = mapDispatch(mockCallback);
+
+  output[method](...props);
+
+  expect(mockCallback).toBeCalled();
+  expect(mockCallback).toBeCalledWith(calledWith);
+};
