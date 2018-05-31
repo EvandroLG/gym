@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`action should return an expected object 1`] = `
-Object {
-  "type": "SET_VIDEO_URL",
-  "url": "https://www.youtube.com/watch?v=04p4MWfhpAI",
-}
-`;
