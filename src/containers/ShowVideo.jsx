@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import { setVideoUrl } from '../action';
 import ShowVideo from '../components/training_list/ShowVideo';
 
-const mapStateToProps = ({ videoUrl }) => {
+export const mapStateToProps = ({ videoUrl }) => {
   return {
     videoUrl
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     onVideoUrlChange: (url) => {
       dispatch(setVideoUrl(url));

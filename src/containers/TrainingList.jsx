@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import DB from '../libs/db';
 import TrainingList from '../components/training_list/';
 
-const mapStateToProps = ({ trainingList }) => {
+export const mapStateToProps = ({ trainingList }) => {
   return {
     trainingList
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     findAll: () => {
       new DB().findAll((trainingList) => {

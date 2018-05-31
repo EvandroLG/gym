@@ -5,10 +5,45 @@ import TrainingList from '../components/training_list/';
 import ShowVideo from '../components/training_list/ShowVideo';
 import Training from '../components/training_list/Training';
 import ExerciseField from '../components/training_list/ExerciseField';
+import { mapStateToProps as mapStateTrainingList } from '../containers/TrainingList';
+import { mapStateToProps as mapStateShowVideo, mapDispatchToProps as mapDispatchShowVideo  } from '../containers/ShowVideo';
 
 /* global verifySnapshot */
 
-describe('training list', () => {
+describe('containers', () => {
+  it('should return trainingList with correct value', () => {
+    const output = mapStateTrainingList({
+      trainingList: fixtures
+    });
+
+    expect(output.trainingList).toEqual(fixtures);
+  });
+
+  it('should return videoUrl with right value', () => {
+    const videoUrl = 'http://localhost:8080/video';
+    const output = mapStateShowVideo({
+      videoUrl
+    });
+
+    expect(output.videoUrl).toEqual(videoUrl);
+  });
+
+  it('should return an object with onVideoUrlChange', () => {
+    const mockCallback = jest.fn();
+    const output = mapDispatchShowVideo(mockCallback);
+    const url = 'http://localhost:8080/video';
+
+    output.onVideoUrlChange(url);
+
+    expect(mockCallback).toBeCalled();
+    expect(mockCallback).toBeCalledWith({
+      type: 'SET_VIDEO_URL',
+      url
+    });
+  });
+});
+
+describe('components', () => {
   describe('training list component', () => {
     it('should return an expected html structure and call findAll method', () => {
       const mockCallback = jest.fn();

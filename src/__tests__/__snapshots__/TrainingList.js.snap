@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`training list exercise field component should render component as expected 1`] = `
+exports[`components exercise field component should render component as expected 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -83,7 +83,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`training list training component should call correct method after submit form 1`] = `
+exports[`components training component should call correct method after submit form 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -112,7 +112,7 @@ exports[`training list training component should call correct method after submi
 }
 `;
 
-exports[`training list training component should return html structure as expected 1`] = `
+exports[`components training component should return html structure as expected 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -1497,7 +1497,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`training list training list component should return an expected html structure and call findAll method 1`] = `
+exports[`components training list component should return an expected html structure and call findAll method 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -2043,7 +2043,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`training list video component should return an expected html structure 1`] = `
+exports[`components video component should return an expected html structure 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
