@@ -9,7 +9,6 @@ global.verifySnapshot = (component) => {
   expect(tree).toMatchSnapshot();
 };
 
-global.verifyMapStateToProps = (mapState, key, params) => {
-  const output = mapState(params);
-  expect(output[key]).toEqual(params[key]);
+global.verifyMapStateToProps = (mapState, params, key,  output) => {
+  expect(mapState(params)[key]).toEqual(output);
 };
