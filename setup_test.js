@@ -7,4 +7,9 @@ configure({ adapter: new Adapter() });
 global.verifySnapshot = (component) => {
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
-}
+};
+
+global.verifyMapStateToProps = (mapState, key, params) => {
+  const output = mapState(params);
+  expect(output[key]).toEqual(params[key]);
+};
