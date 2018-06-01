@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`new training exercise fields component exercise fields component should render as expected 1`] = `
+exports[`components exercise fields component exercise fields component should render as expected 1`] = `
 <div
   className="row"
 >
@@ -88,7 +88,7 @@ exports[`new training exercise fields component exercise fields component should
 </div>
 `;
 
-exports[`new training exercise fields component should call correct callback after click on remove button 1`] = `
+exports[`components exercise fields component should call correct callback after click on remove button 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -98,7 +98,7 @@ exports[`new training exercise fields component should call correct callback aft
 }
 `;
 
-exports[`new training new training component new training component should render as expected 1`] = `
+exports[`components new training component new training component should render as expected 1`] = `
 <NewTraining
   exerciseList={Array []}
   title=""
@@ -141,7 +141,7 @@ exports[`new training new training component new training component should rende
 </NewTraining>
 `;
 
-exports[`new training new training component should call correct callback after change title 1`] = `
+exports[`components new training component should call correct callback after change title 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [

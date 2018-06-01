@@ -1,12 +1,85 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import fixtures from './fixtures';
+import DB from '../libs/db';
 import NewTraining from '../components/new_training/Index';
 import ExerciseFields from '../components/new_training/ExerciseFields';
+import { mapStateToProps as mapStateNewTraining, mapDispatchToProps } from '../containers/NewTraining';
+jest.mock('../libs/db');
 
 /* global verifySnapshot */
 
-describe('new training', () => {
+describe('container', () => {
+  it('should contains title and exerciseList with correct values in mapStateToProps', () => {
+    const { title, exerciseList } = fixtures[0];
+
+    verifyMapStateToProps(mapStateNewTraining, {
+      newTraining: { title }
+    }, 'title', title);
+
+    verifyMapStateToProps(mapStateNewTraining, {
+      newTraining: { exerciseList }
+    }, 'exerciseList',  exerciseList);
+  });
+
+  it('should return onTitleUpdate method', () => {
+    const title = 'Arms';
+
+    verifyMapDispatchToProps(mapDispatchToProps, 'onTitleUpdate', [title], {
+      type: 'SET_TITLE_NEW_TRAINING',
+      title
+    });
+  });
+
+  it('should return onAddExercise method', () => {
+    verifyMapDispatchToProps(mapDispatchToProps, 'onAddExercise', [], {
+      type: 'ADD_EXERCISE_NEW_TRAINING'
+    });
+  });
+
+  it('should return onRemoveExercise', () => {
+    const id = 1;
+    verifyMapDispatchToProps(mapDispatchToProps, 'onRemoveExercise', [id], {
+      type: 'REMOVE_EXERCISE_NEW_TRAINING',
+      id
+    });
+  });
+
+  it('should return onUpdateExercise', () => {
+    const id = 1;
+    const fieldName = 'name';
+    const value = 'Pull-Down';
+
+    verifyMapDispatchToProps(mapDispatchToProps, 'onUpdateExercise', [id, fieldName, value], {
+      type: 'SET_FIELD_NEW_TRAINING',
+      id,
+      fieldName,
+      value
+    });
+  });
+
+  it('it should return onSubmit', () => {
+    const mockCallback = jest.fn();
+    const { title, exerciseList } = fixtures[0];
+
+    mapDispatchToProps(mockCallback).onSubmit(title, exerciseList);
+
+    expect(DB.prototype.insert).toBeCalled();
+    expect(DB.prototype.insert.mock.calls[0][0]).toEqual({
+      title,
+      exerciseList
+    });
+
+    DB.prototype.insert.mock.calls[0][1]();
+
+    expect(mockCallback).toBeCalled();
+    expect(mockCallback).toBeCalledWith({
+      type: 'EMPTY_NEW_TRAINING'
+    });
+  });
+});
+
+describe('components', () => {
 
   describe('new training component', () => {
     function mountNewTraining(keyProp, mockCallback) {

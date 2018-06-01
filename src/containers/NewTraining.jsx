@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import DB from '../libs/db';
 import NewTraining from '../components/new_training/Index';
 
-const mapStateToProps = ({ newTraining }) => {
+export const mapStateToProps = ({ newTraining }) => {
   return {
     title: newTraining.title,
     exerciseList: newTraining.exerciseList
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     onTitleUpdate: (title) => {
       dispatch({
@@ -46,9 +46,7 @@ const mapDispatchToProps = (dispatch) => {
         exerciseList
       }, () => {
         dispatch({
-          type: 'EMPTY_NEW_TRAINING',
-          title,
-          exerciseList
+          type: 'EMPTY_NEW_TRAINING'
         });
       });
     }
