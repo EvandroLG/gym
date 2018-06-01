@@ -1,44 +1,99 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import fixtures from './fixtures';
+import DB from '../libs/db';
 import TrainingList from '../components/training_list/';
 import ShowVideo from '../components/training_list/ShowVideo';
 import Training from '../components/training_list/Training';
 import ExerciseField from '../components/training_list/ExerciseField';
-import { mapStateToProps as mapStateTrainingList } from '../containers/TrainingList';
+import { mapStateToProps as mapStateTrainingList, mapDispatchToProps as mapDispatchTrainingList } from '../containers/TrainingList';
 import { mapStateToProps as mapStateShowVideo, mapDispatchToProps as mapDispatchShowVideo  } from '../containers/ShowVideo';
+
+jest.mock('../libs/db');
 
 /* global verifySnapshot */
 
 describe('containers', () => {
-  it('should return trainingList with correct value', () => {
-    const output = mapStateTrainingList({
-      trainingList: fixtures
+  describe('training list', () => {
+    it('should return trainingList with correct value', () => {
+      verifyMapStateToProps(mapStateTrainingList, {
+        trainingList: fixtures
+      }, 'trainingList', fixtures);
     });
 
-    expect(output.trainingList).toEqual(fixtures);
-  });
-
-  it('should return videoUrl with right value', () => {
-    const videoUrl = 'http://localhost:8080/video';
-    const output = mapStateShowVideo({
-      videoUrl
+    it('should return an object with onAddNewExercise', () => {
+      const id = 1;
+      verifyMapDispatchToProps(mapDispatchTrainingList, 'onAddNewExercise', [id], {
+        type: 'ADD_NEW_EXERCISE',
+        id
+      });
     });
 
-    expect(output.videoUrl).toEqual(videoUrl);
+    it('should return an object with onRemoveExercise method', () => {
+      const idTraining = 1;
+      const idExercise = 2;
+
+      verifyMapDispatchToProps(mapDispatchTrainingList, 'onRemoveExercise', [idTraining, idExercise], {
+        type: 'REMOVE_EXERCISE',
+        idTraining,
+        idExercise
+      });
+    });
+
+    it('should return an object with findAll method', () => {
+      const mockCallback = jest.fn();
+      mapDispatchTrainingList(mockCallback).findAll();
+
+      expect(DB.prototype.findAll).toBeCalled();
+      expect(DB.prototype.findAll.mock.calls[0]).toHaveLength(1);
+
+      DB.prototype.findAll.mock.calls[0][0](fixtures);
+
+      expect(mockCallback).toBeCalled();
+      expect(mockCallback).toBeCalledWith({
+        type: 'LOAD_TRAINING_LIST',
+        trainingList: fixtures
+      });
+    });
+
+    it('should return an object with onRemoveTraining', () => {
+      const id = 1;
+
+      verifyMapDispatchToProps(mapDispatchTrainingList, 'onRemoveTraining', [id], {
+        type: 'REMOVE_TRAINING',
+        id
+      });
+
+      expect(DB.prototype.remove).toBeCalled();
+      expect(DB.prototype.remove).toBeCalledWith(id);
+    });
+
+    it('should return an object with onSubmit method', () => {
+      const id = 1;
+      const training = fixtures[0];
+
+      mapDispatchTrainingList().onSubmit(id, training);
+
+      expect(DB.prototype.update).toBeCalled();
+      expect(DB.prototype.update).toBeCalledWith(id, training);
+    });
   });
 
-  it('should return an object with onVideoUrlChange', () => {
-    const mockCallback = jest.fn();
-    const output = mapDispatchShowVideo(mockCallback);
-    const url = 'http://localhost:8080/video';
+  describe('show video', () => {
+    it('should return videoUrl with right value', () => {
+      const url = 'http://localhost:8080/video';
+      verifyMapDispatchToProps(mapDispatchShowVideo, 'onVideoUrlChange', [url], {
+        type: 'SET_VIDEO_URL',
+        url
+      });
+    });
 
-    output.onVideoUrlChange(url);
-
-    expect(mockCallback).toBeCalled();
-    expect(mockCallback).toBeCalledWith({
-      type: 'SET_VIDEO_URL',
-      url
+    it('should return an object with onVideoUrlChange', () => {
+      const url = 'http://localhost:8080/video';
+      verifyMapDispatchToProps(mapDispatchShowVideo, 'onVideoUrlChange', [url], {
+        type: 'SET_VIDEO_URL',
+        url
+      });
     });
   });
 });
